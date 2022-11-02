@@ -1,0 +1,32 @@
+[
+    {
+        "Name": {
+            "en": "Entropy"
+        },
+        "Description": {
+            "en": "Cancel the effects of all Final cards this round."
+        },
+        "Copies": 1,
+        "Priority": 0
+    },
+    {
+        "Name": {
+            "en": "Cursed Deck"
+        },
+        "Description": {
+            "en": "Swap two played Stances between any two players other than yourself."
+        },
+        "Copies": 1,
+        "Priority": 1
+    },
+    {
+        "Name": {
+            "en": "Stoic Hymnal"
+        },
+        "Description": {
+            "en": "Your Stances cannot be changed by any future Final effects this round."
+        },
+        "Copies": 1,
+        "Priority": 2
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "Name": {
+            "en": "Nil"
+        },
+        "Description": {
+            "en": "All players must immediately play a Stance card."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Curiosity"
+        },
+        "Description": {
+            "en": "All players holding at least one Betrayal must raise their hands. You may swap any held Stance of yours for a Betrayal of their choice."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Cacophony"
+        },
+        "Description": {
+            "en": "All players must immediately reveal their Cacophony cards. If there are 3 or fewer other Cacophony cards revealed, gain that many points. Otherwise, discard all your Action cards."
+        },
+        "Copies": 5
+    },
+    {
+        "Name": {
+            "en": "Misery"
+        },
+        "Description": {
+            "en": "All other players discard two Action cards. If Joy is in play, double this effect."
+        },
+        "Copies": 1,
+        "Persistent": true
+    },
+    {
+        "Name": {
+            "en": "Joy"
+        },
+        "Description": {
+            "en": "You may play two Action cards immediately. If Misery has been played this round, you may play three Action cards immediately instead."
+        },
+        "Copies": 1,
+        "Persistent": true
+    },
+    {
+        "Name": {
+            "en": "Implosion"
+        },
+        "Description": {
+            "en": "Cancel the effects of another player's Action."
+        },
+        "Copies": 1,
+        "Instant": true
+    }
+]

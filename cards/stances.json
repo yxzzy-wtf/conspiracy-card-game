@@ -1,0 +1,42 @@
+[
+    {
+        "Name": {
+            "en": ""
+        },
+        "Description": {
+            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point."
+        },
+        "Type": "Bargain",
+        "Copies": 20
+    },
+    {
+        "Name": {
+            "en": ""
+        },
+        "Description": {
+            "en": "If played against a Bargain, +2 points."
+        },
+        "Type": "Betrayal",
+        "Copies": 20
+    },
+    {
+        "Name": {
+            "en": "Symbiosis"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +3 points, and an addition +2 points to both players. If played against a Betrayal, -1 point."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Excommunication"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +4 points. This card must be played face-up."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    }
+]
