@@ -45,6 +45,8 @@ func main() {
 		panic(err)
 	}
 
+	
+
 	s, _ := os.Open("cards/stances.json")
 	defer s.Close()
 	dec = json.NewDecoder(s)
