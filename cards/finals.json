@@ -28,5 +28,195 @@
         },
         "Copies": 1,
         "Priority": 2
+    },
+    {
+        "Name": {
+            "en": "Vengeful Vow"
+        },
+        "Description": {
+            "en": "If you have Bargained with a player who has Betrayed you, you may take all their Action and Final cards."
+        },
+        "Copies": 1,
+        "Priority": 3
+    },
+    {
+        "Name": {
+            "en": "Act of Penance"
+        },
+        "Description": {
+            "en": "If you have Betrayed a player who has Bargained with you, you may change your stance to a Bargain, if you have one. If you do so, the other player gains 2 points."
+        },
+        "Copies": 1,
+        "Priority": 4
+    },
+    {
+        "Name": {
+            "en": "Lord of the Pit"
+        },
+        "Description": {
+            "en": "Gain 3 points for every time you have Betrayed a Betrayer in this round."
+        },
+        "Copies": 1,
+        "Priority": 5
+    },
+    {
+        "Name": {
+            "en": "Piety"
+        },
+        "Description": {
+            "en": "Gain 3 points for every time you have Bargained with a Betrayer in this round."
+        },
+        "Copies": 1,
+        "Priority": 6
+    },
+    {
+        "Name": {
+            "en": "Perjury"
+        },
+        "Description": {
+            "en": "Replace one of your played Stance cards with one of the opposite Stance."
+        },
+        "Copies": 1,
+        "Priority": 7
+    },
+    {
+        "Name": {
+            "en": "Martyrdom"
+        },
+        "Description": {
+            "en": "Choose another player. Both of you lose 5 points. If you are the player with the lowest score before losing these points, only the other player loses 5 points."
+        },
+        "Copies": 1,
+        "Priority": 8
+    },
+    {
+        "Name": {
+            "en": "Pantheon"
+        },
+        "Description": {
+            "en": "If more than half the Final cards have already been resolved, gain 3 points. Otherwise, lose 1 point."
+        },
+        "Copies": 1,
+        "Priority": 9
+    },
+    {
+        "Name": {
+            "en": "The Abyss"
+        },
+        "Description": {
+            "en": "The player of the next Final to resolve loses 4 points."
+        },
+        "Copies": 1,
+        "Priority": 10
+    },
+    {
+        "Name": {
+            "en": "Flagellation"
+        },
+        "Description": {
+            "en": "Lose 3 points. You may not lose any further points this round."
+        },
+        "Copies": 1,
+        "Priority": 11
+    },
+    {
+        "Name": {
+            "en": "Chaos"
+        },
+        "Description": {
+            "en": "Pick up 4 Stance cards, shuffle them, and randomly deal them back to where they were taken from face-down."
+        },
+        "Copies": 1,
+        "Priority": 12
+    },
+    {
+        "Name": {
+            "en": "Funeral Pyre"
+        },
+        "Description": {
+            "en": "Take 3 points from one player, and give 3 points to a player other than yourself."
+        },
+        "Copies": 1,
+        "Priority": 13
+    },
+    {
+        "Name": {
+            "en": "Interregnum"
+        },
+        "Description": {
+            "en": "Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from them. If you do not, give 3 points to them."
+        },
+        "Copies": 1,
+        "Priority": 14
+    },
+    {
+        "Name": {
+            "en": "P'Zea-ia-Gwlfth"
+        },
+        "Description": {
+            "en": "If this is the last Final to resolve, gain 5 points."
+        },
+        "Copies": 1,
+        "Priority": 15
+    },
+    {
+        "Name": {
+            "en": "Anarchy"
+        },
+        "Description": {
+            "en": "Every player gains 1 point for every Bargain they have played."
+        },
+        "Copies": 1,
+        "Priority": 16
+    },
+    {
+        "Name": {
+            "en": "Burnt Offerings"
+        },
+        "Description": {
+            "en": "You may ignore any points lost due to any one Betrayal."
+        },
+        "Copies": 1,
+        "Priority": 17
+    },
+    {
+        "Name": {
+            "en": "MÓRRÍGAN"
+        },
+        "Description": {
+            "en": "Gain 1 point for every time a player Betrayed a Bargain in this round."
+        },
+        "Copies": 1,
+        "Priority": 18
+    },
+    {
+        "Name": {
+            "en": "Sacrifice"
+        },
+        "Description": {
+            "en": "Gain 3 points and discard all of your Action and Final cards."
+        },
+        "Copies": 1,
+        "Priority": 19
+    },
+    {
+        "Name": {
+            "en": "Contrition"
+        },
+        "Description": {
+            "en": "Ask a player you have Betrayed if they forgive you. If they do, you gain 3 points, and they gain 1 point."
+        },
+        "Copies": 1,
+        "Priority": 20
+    },
+    {
+        "Name": {
+            "en": "Final Rites"
+        },
+        "Description": {
+            "en": "Select 3 interactions and swap them. You may only select 1 interaction involving yourself."
+        },
+        "Copies": 1,
+        "Priority": 100
     }
 ]

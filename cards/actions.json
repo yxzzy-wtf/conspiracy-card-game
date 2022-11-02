@@ -55,5 +55,152 @@
         },
         "Copies": 1,
         "Instant": true
+    },
+    {
+        "Name": {
+            "en": "That Which Is Unseen"
+        },
+        "Description": {
+            "en": "You have 60 seconds to look at the Action card deck. You may order it or shuffle it in any way you wish before putting it back."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Paranoia"
+        },
+        "Description": {
+            "en": "All players holding at least one Bargain must raise their hands. You may swap any held Stance of yours with a Bargain of their choice."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Duplicity"
+        },
+        "Description": {
+            "en": "You may swap two of your played Stance cards."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Burning Truth"
+        },
+        "Description": {
+            "en": "Choose a player to reveal their held Stance cards, then give them this Burning Truth card."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Landmine"
+        },
+        "Description": {
+            "en": "If a player tries to take or swap any of your held cards, reveal this card and negate that effect. The player must also discard all their Action cards."
+        },
+        "Instant": true,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Toxic Shock"
+        },
+        "Description": {
+            "en": "All other players must discard two Actions."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Subterfuge"
+        },
+        "Description": {
+            "en": "You may look at the played Stance cards of any one other player."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Famine"
+        },
+        "Description": {
+            "en": "While this card is in effect, no Action cards may be drawn."
+        },
+        "Persistent": true,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Abundance"
+        },
+        "Description": {
+            "en": "Remove Famine from play. Draw as many Action cards as there are players, then give each player one card of your choosing."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Amnesia"
+        },
+        "Description": {
+            "en": "Remove all Persistent cards from play."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Honesty"
+        },
+        "Description": {
+            "en": "You may turn any of your own played Stances face-up."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Fear"
+        },
+        "Description": {
+            "en": "While you hold this card, you may not play any other Actions."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Love"
+        },
+        "Description": {
+            "en": "If another player has Love, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals Love, you lose 2 points."
+        },
+        "Copies": 3
+    },
+    {
+        "Name": {
+            "en": "Tithes"
+        },
+        "Description": {
+            "en": "All players must give you one of their Action cards, of their choosing."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Purification"
+        },
+        "Description": {
+            "en": "All players, including yourself, must reveal one of their played Stances and then return it to their hand."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Turnabout is Fair Play"
+        }, 
+        "Description": {
+            "en": "If an Action allows a player to take cards from your hand, you may pick it up and play it yourself immediately afterwards."
+        },
+        "Instant": true,
+        "Copies": 1
     }
 ]

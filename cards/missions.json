@@ -4,8 +4,19 @@
             "en": "Masochism Tango"
         },
         "Description": {
-            "en": "If you are Betrayed while trying to Bargain three times in a single round, +8 points."
+            "en": "In a single round, Bargain with two Betrayers."
         },
+        "Points": 6,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Confession"
+        },
+        "Description": {
+            "en": "Get a player to say 'I love you'. Then shout 'Ha! Idiot.'"
+        },
+        "Points": 8,
         "Copies": 1
     }
 ]

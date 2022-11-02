@@ -24,7 +24,7 @@
             "en": "Symbiosis"
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points, and an addition +2 points to both players. If played against a Betrayal, -1 point."
+            "en": "If played against a Bargain, +3 points, and an additional +2 points to both players. If played against a Betrayal, -1 point."
         },
         "Type": "Bargain",
         "Copies": 1
@@ -35,6 +35,126 @@
         },
         "Description": {
             "en": "If played against a Bargain, +4 points. This card must be played face-up."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Quid Pro Quo"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point. At any time once played, this card can be flipped face-up to negate a player's Action."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Assassination"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +1 point, and the Bargaining player loses 3 points."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "A Fair Deal"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +4 points. If played against a Betrayal, -1 point. This card must be played face-up."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Coup d'Etat"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +2 points. If played against the player with the most points, they lose 2 points."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Contractual Obligations"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +1 points. If played against a Betrayal, +1 point, and the Betrayer loses 3 points."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "A True Name, Spoken Softly"
+        },
+        "Description": {
+            "en": "If played against a Bargain or a Betrayal, +1 point."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Peacekeeping"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point, and you may take all Action and Final cards of the other player."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "“Peacekeeping”"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +2 points and take all the Action cards of the other player."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Cameraderie"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +4 points. If played against a Betrayal, -2 points."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Bitter Taste"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +2 points. The other player must also redraw all their Bargain cards at the beginning of the next round."
+        },
+        "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Love-Tackle"
+        },
+        "Description": {
+            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point. If a player reveals this card during the game, it is flipped face-up, and they must give you all their Action cards."
+        },
+        "Type": "Bargain",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Thrown to the Lampreys"
+        },
+        "Description": {
+            "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their Stance cards."
         },
         "Type": "Betrayal",
         "Copies": 1

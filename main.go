@@ -19,6 +19,7 @@ type Action struct {
 
 type Mission struct {
 	Card
+	Points int
 }
 
 type Stance struct {
