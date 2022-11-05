@@ -1,0 +1,129 @@
+\documentclass{scrartcl}
+
+% Compiled with assistance from a wonderful guide by Brett Witty: https://www.brettwitty.net/how-to-design-cards-1.html; https://www.brettwitty.net/how-to-design-cards-2.html; https://www.brettwitty.net/how-to-design-cards-3.html
+
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multicol}
+\usepackage[margin=8mm]{geometry}
+
+\usepackage{nopageno}
+\usepackage{graphicx, txfonts}
+\usepackage{anyfontsize}
+\usepackage{ifthen}
+
+\RequirePackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength{\PreviewBorder}{0.125in}
+
+% All cards
+\newcommand{\cardmargin}{2mm}
+\newcommand{\cardcorners}{4mm}
+\newcommand{\cardwidth}{63mm}
+\newcommand{\cardheight}{88mm}
+\newcommand{\cardnameheight}{10mm}
+\newcommand{\carddescriptionheight}{30mm}
+\newcommand{\carddescriptionmargin}{4mm}
+
+\newcommand{\card}[1]{\textbf{#1}}
+\newcommand{\act}{\textbf{Action}}
+\newcommand{\stn}{\textbf{Stance}}
+\newcommand{\fin}{\textbf{Final}}
+\newcommand{\mis}{\textbf{Mission}}
+\newcommand{\brg}{\bargainheartoutline}
+\newcommand{\btr}{\betrayalheart}
+
+% Actions
+\newcommand{\action}[4]{ % Name, Description, Instant?, Persistent?
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
+    
+        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
+            \ifstrempty{#3}{}{
+                % Instant, add the instant icon
+                \small \textbf{Instant} \textit{#3}. 
+
+            }\ifstrempty{#4}{}{
+                % Persistent, add the instant icon
+                \small \textbf{Persistent}.
+
+            }
+            \small #2.
+        };
+    
+    \end{tikzpicture}
+}
+
+% Stances
+\newcommand{\stancetypeheight}{10mm}
+
+\newcommand{\bargainheart}{\ensuremath\varheartsuit}
+\newcommand{\bargainheartoutline}{\ensuremath\heartsuit}
+\newcommand{\betrayalheart}{\rotatebox[origin=c]{180}{\ensuremath\varheartsuit}}
+
+\newcommand{\heart}[1]{
+    \ifthenelse{\equal{#1}{BARGAIN}}
+        {\bargainheartoutline}
+        {\betrayalheart}
+}
+
+\newcommand{\stance}[5]{ % Name, Description, Type, AgainstBargain, AgainstBetrayal
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (type) at (0.12 * \cardwidth, 0.88 * \cardheight) [align = center] {\fontsize{65}{80px} \heart{#3}};
+
+        \node (basevsbargain) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{\fontsize{50px}{60px} \bargainheart{}}};
+        \node (basevsbargainoutline) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \bargainheartoutline{}};
+        \node (basevsbetrayal) at (0.86 * \cardwidth, 0.88 * \cardheight - 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \betrayalheart{}};
+
+        \node (basevsbargaintext) at (0.75 * \cardwidth + 0.5mm, 0.88 * \cardheight + 1.5mm) [rounded corners = \cardcorners, align = center] {#4};
+        \node (basevsbetrayaltext) at (0.86 * \cardwidth + 0.5mm, 0.88 * \cardheight - 1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{#5}};
+
+        \ifstrempty{#2}
+            {
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
+            }
+            {
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
+                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2.};
+            }
+        
+    \end{tikzpicture}
+}
+
+%TODO Finals
+
+%TODO Missions
+
+%TODO images
+
+\begin{document}
+
+\thispagestyle{empty}
+
+% TODO autogenerate the below
+% Actions
+\action{DUPLICITY}{You may swap two of your played \stn{} cards}{}{}
+
+% Stances
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards}{BARGAIN}{3}{-1}
+\stance{“PEACEKEEPING”}{If played against a \brg{}, take all the Action cards of the other player.}{BETRAYAL}{2}{0}
+\stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round}{BETRAYAL}{2}{0}
+
+
+\end{document}

@@ -4,9 +4,11 @@
             "en": ""
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point."
+            "en": ""
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 20
     },
     {
@@ -17,6 +19,7 @@
             "en": "If played against a Bargain, +2 points."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 2,
         "Copies": 20
     },
     {
@@ -24,9 +27,11 @@
             "en": "Symbiosis"
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points, and an additional +2 points to both players. If played against a Betrayal, -1 point."
+            "en": "If played against a Bargain both players gain an additional 2 points."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 1
     },
     {
@@ -34,9 +39,10 @@
             "en": "Excommunication"
         },
         "Description": {
-            "en": "If played against a Bargain, +4 points. This card must be played face-up."
+            "en": "This card must be played face-up."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 4,
         "Copies": 1
     },
     {
@@ -44,9 +50,11 @@
             "en": "Quid Pro Quo"
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point. At any time once played, this card can be flipped face-up to negate a player's Action."
+            "en": "At any time once played, this card can be flipped face-up to negate a player's Action."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 1
     },
     {
@@ -54,9 +62,10 @@
             "en": "Assassination"
         },
         "Description": {
-            "en": "If played against a Bargain, +1 point, and the Bargaining player loses 3 points."
+            "en": "If played against a Bargain, the Bargaining player loses 2 additional points."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 1,
         "Copies": 1
     },
     {
@@ -64,9 +73,11 @@
             "en": "A Fair Deal"
         },
         "Description": {
-            "en": "If played against a Bargain, +4 points. If played against a Betrayal, -1 point. This card must be played face-up."
+            "en": "This card must be played face-up."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 4,
         "Copies": 1
     },
     {
@@ -74,9 +85,10 @@
             "en": "Coup d'Etat"
         },
         "Description": {
-            "en": "If played against a Bargain, +2 points. If played against the player with the most points, they lose 2 points."
+            "en": "If played against the player with the most points in the last round, they lose 2 additional points."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 2,
         "Copies": 1
     },
     {
@@ -84,9 +96,11 @@
             "en": "Contractual Obligations"
         },
         "Description": {
-            "en": "If played against a Bargain, +1 points. If played against a Betrayal, +1 point, and the Betrayer loses 3 points."
+            "en": "If played against a Betrayal, the Betrayer loses 3 points."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": 1,
+        "AgainstBargain": 1,
         "Copies": 1
     },
     {
@@ -94,9 +108,11 @@
             "en": "A True Name, Spoken Softly"
         },
         "Description": {
-            "en": "If played against a Bargain or a Betrayal, +1 point."
+            "en": ""
         },
         "Type": "Betrayal",
+        "AgainstBetrayal": 1,
+        "AgainstBargain": 1,
         "Copies": 1
     },
     {
@@ -104,9 +120,11 @@
             "en": "Peacekeeping"
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point, and you may take all Action and Final cards of the other player."
+            "en": "If played against a Betrayal, you may take all Action and Final cards of the other player."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 1
     },
     {
@@ -114,9 +132,10 @@
             "en": "“Peacekeeping”"
         },
         "Description": {
-            "en": "If played against a Bargain, +2 points and take all the Action cards of the other player."
+            "en": "If played against a Bargain, take all the Action cards of the other player."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 2,
         "Copies": 1
     },
     {
@@ -124,9 +143,11 @@
             "en": "Cameraderie"
         },
         "Description": {
-            "en": "If played against a Bargain, +4 points. If played against a Betrayal, -2 points."
+            "en": ""
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -2,
+        "AgainstBargain": 4,
         "Copies": 1
     },
     {
@@ -134,9 +155,10 @@
             "en": "Bitter Taste"
         },
         "Description": {
-            "en": "If played against a Bargain, +2 points. The other player must also redraw all their Bargain cards at the beginning of the next round."
+            "en": "The other player must also redraw all their Bargain cards at the beginning of the next round."
         },
         "Type": "Betrayal",
+        "AgainstBargain": 2,
         "Copies": 1
     },
     {
@@ -144,9 +166,11 @@
             "en": "Love-Tackle"
         },
         "Description": {
-            "en": "If played against a Bargain, +3 points. If played against a Betrayal, -1 point. If a player reveals this card during the game, it is flipped face-up, and they must give you all their Action cards."
+            "en": "If a player reveals this card during the game, it is flipped face-up, and they must give you all their Action cards."
         },
         "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 1
     },
     {

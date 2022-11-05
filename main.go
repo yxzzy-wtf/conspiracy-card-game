@@ -13,7 +13,7 @@ type Card struct {
 
 type Action struct {
 	Card
-	Instant    bool
+	Instant    map[string]string
 	Persistent bool
 }
 
@@ -24,11 +24,9 @@ type Mission struct {
 
 type Stance struct {
 	Card
-	Type           string
-	BetrayBetray   int
-	BargainBargain int
-	BetrayBargain  int
-	BargainBetray  int
+	Type            string
+	AgainstBetrayal int
+	AgainstBargain  int
 }
 
 type Final struct {
@@ -44,8 +42,6 @@ func main() {
 	if err := dec.Decode(&actions); err != nil {
 		panic(err)
 	}
-
-	
 
 	s, _ := os.Open("cards/stances.json")
 	defer s.Close()

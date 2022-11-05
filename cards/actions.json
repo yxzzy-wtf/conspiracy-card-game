@@ -54,7 +54,9 @@
             "en": "Cancel the effects of another player's Action."
         },
         "Copies": 1,
-        "Instant": true
+        "Instant": {
+            "en": "At any point while a player is playing an Action."
+        }
     },
     {
         "Name": {
