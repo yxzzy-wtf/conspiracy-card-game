@@ -1,7 +1,7 @@
 [
     {
         "Name": {
-            "en": ""
+            "en": "BARGAIN"
         },
         "Description": {
             "en": ""
@@ -13,10 +13,10 @@
     },
     {
         "Name": {
-            "en": ""
+            "en": "BETRAYAL"
         },
         "Description": {
-            "en": "If played against a Bargain, +2 points."
+            "en": ""
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
@@ -24,10 +24,10 @@
     },
     {
         "Name": {
-            "en": "Symbiosis"
+            "en": "SYMBIOSIS"
         },
         "Description": {
-            "en": "If played against a Bargain both players gain an additional 2 points."
+            "en": "\\brg{}: both players gain an additional 2 points."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -36,7 +36,7 @@
     },
     {
         "Name": {
-            "en": "Excommunication"
+            "en": "EXCOMMUNICATION"
         },
         "Description": {
             "en": "This card must be played face-up."
@@ -47,10 +47,10 @@
     },
     {
         "Name": {
-            "en": "Quid Pro Quo"
+            "en": "QUID PRO QUO"
         },
         "Description": {
-            "en": "At any time once played, this card can be flipped face-up to negate a player's Action."
+            "en": "At any time once played, this card can be flipped face-up to negate a player's \\act{}."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -59,10 +59,10 @@
     },
     {
         "Name": {
-            "en": "Assassination"
+            "en": "ASSASSINATION"
         },
         "Description": {
-            "en": "If played against a Bargain, the Bargaining player loses 2 additional points."
+            "en": "\\brg{}: the other player loses 2 additional points."
         },
         "Type": "Betrayal",
         "AgainstBargain": 1,
@@ -70,7 +70,7 @@
     },
     {
         "Name": {
-            "en": "A Fair Deal"
+            "en": "FAIR DEAL"
         },
         "Description": {
             "en": "This card must be played face-up."
@@ -82,7 +82,7 @@
     },
     {
         "Name": {
-            "en": "Coup d'Etat"
+            "en": "COUP d'ETAT"
         },
         "Description": {
             "en": "If played against the player with the most points in the last round, they lose 2 additional points."
@@ -93,10 +93,10 @@
     },
     {
         "Name": {
-            "en": "Contractual Obligations"
+            "en": "CONTRACTUAL OBLIGATIONS"
         },
         "Description": {
-            "en": "If played against a Betrayal, the Betrayer loses 3 points."
+            "en": "\\btr{}: the other player loses 3 points."
         },
         "Type": "Bargain",
         "AgainstBetrayal": 1,
@@ -105,7 +105,7 @@
     },
     {
         "Name": {
-            "en": "A True Name, Spoken Softly"
+            "en": "A TRUE NAME, SPOKEN SOFTLY"
         },
         "Description": {
             "en": ""
@@ -117,10 +117,10 @@
     },
     {
         "Name": {
-            "en": "Peacekeeping"
+            "en": "PEACEKEEPING"
         },
         "Description": {
-            "en": "If played against a Betrayal, you may take all Action and Final cards of the other player."
+            "en": "\\btr{}: you may take all \\act{} and \\fin{} cards of the other player."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -129,10 +129,10 @@
     },
     {
         "Name": {
-            "en": "“Peacekeeping”"
+            "en": "“PEACEKEEPING”"
         },
         "Description": {
-            "en": "If played against a Bargain, take all the Action cards of the other player."
+            "en": "\\brg{}: take all the \\act{} cards of the other player."
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
@@ -140,7 +140,7 @@
     },
     {
         "Name": {
-            "en": "Cameraderie"
+            "en": "CAMERADERIE"
         },
         "Description": {
             "en": ""
@@ -152,10 +152,10 @@
     },
     {
         "Name": {
-            "en": "Bitter Taste"
+            "en": "BITTER TASTE"
         },
         "Description": {
-            "en": "The other player must also redraw all their Bargain cards at the beginning of the next round."
+            "en": "The other player must also redraw all their \\brg{} cards at the beginning of the next round."
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
@@ -163,10 +163,10 @@
     },
     {
         "Name": {
-            "en": "Love-Tackle"
+            "en": "LOVE-TACKLE"
         },
         "Description": {
-            "en": "If a player reveals this card during the game, it is flipped face-up, and they must give you all their Action cards."
+            "en": "If a player reveals this card during the game, it is flipped face-up, and they must give you all their \\act{} cards."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -175,10 +175,10 @@
     },
     {
         "Name": {
-            "en": "Thrown to the Lampreys"
+            "en": "THROWN to the LAMPREYS"
         },
         "Description": {
-            "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their Stance cards."
+            "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \\stn{} cards."
         },
         "Type": "Betrayal",
         "Copies": 1

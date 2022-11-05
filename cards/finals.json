@@ -1,137 +1,137 @@
 [
     {
         "Name": {
-            "en": "Entropy"
+            "en": "ENTROPY"
         },
         "Description": {
-            "en": "Cancel the effects of all Final cards this round."
+            "en": "Cancel the effects of all \\fin{} cards this round."
         },
         "Copies": 1,
         "Priority": 0
     },
     {
         "Name": {
-            "en": "Cursed Deck"
+            "en": "CURSED DECK"
         },
         "Description": {
-            "en": "Swap two played Stances between any two players other than yourself."
+            "en": "Swap two played \\stn{} cards between any two players other than yourself."
         },
         "Copies": 1,
         "Priority": 1
     },
     {
         "Name": {
-            "en": "Stoic Hymnal"
+            "en": "STOIC HYMNAL"
         },
         "Description": {
-            "en": "Your Stances cannot be changed by any future Final effects this round."
+            "en": "Your \\stn{} cards cannot be changed by any future \\fin{} effects this round."
         },
         "Copies": 1,
         "Priority": 2
     },
     {
         "Name": {
-            "en": "Vengeful Vow"
+            "en": "VOW of VENGEANCE"
         },
         "Description": {
-            "en": "If you have Bargained with a player who has Betrayed you, you may take all their Action and Final cards."
+            "en": "If you have played a \\brg{} against a \\btr{}, you may take all their held \\act{} and \\fin{} cards."
         },
         "Copies": 1,
         "Priority": 3
     },
     {
         "Name": {
-            "en": "Act of Penance"
+            "en": "ACT of PENANCE"
         },
         "Description": {
-            "en": "If you have Betrayed a player who has Bargained with you, you may change your stance to a Bargain, if you have one. If you do so, the other player gains 2 points."
+            "en": "If you have played a \\btr{} against a \\brg{}, you may change your stance to a \\brg{}, if you are holding one. If you do so, the other player gains 2 extra points."
         },
         "Copies": 1,
         "Priority": 4
     },
     {
         "Name": {
-            "en": "Lord of the Pit"
+            "en": "LORD of the PIT"
         },
         "Description": {
-            "en": "Gain 3 points for every time you have Betrayed a Betrayer in this round."
+            "en": "Gain 3 points for every time you have played a \\btr{} against a \\btr{} in this round."
         },
         "Copies": 1,
         "Priority": 5
     },
     {
         "Name": {
-            "en": "Piety"
+            "en": "PIETY"
         },
         "Description": {
-            "en": "Gain 3 points for every time you have Bargained with a Betrayer in this round."
+            "en": "Gain 3 points for every time you have played a \\brg{} against a \\btr{} in this round."
         },
         "Copies": 1,
         "Priority": 6
     },
     {
         "Name": {
-            "en": "Perjury"
+            "en": "PERJURY"
         },
         "Description": {
-            "en": "Replace one of your played Stance cards with one of the opposite Stance."
+            "en": "Replace one of your played \\stn{} cards with one of the opposite \\stn{}, if you hold one."
         },
         "Copies": 1,
         "Priority": 7
     },
     {
         "Name": {
-            "en": "Martyrdom"
+            "en": "MARTYRDOM"
         },
         "Description": {
-            "en": "Choose another player. Both of you lose 5 points. If you are the player with the lowest score before losing these points, only the other player loses 5 points."
+            "en": "Choose another player. Both of you lose 5 points. If you are already the player with the lowest score before losing these points, only the other player loses 5 points."
         },
         "Copies": 1,
         "Priority": 8
     },
     {
         "Name": {
-            "en": "Pantheon"
+            "en": "PANTHEON"
         },
         "Description": {
-            "en": "If more than half the Final cards have already been resolved, gain 3 points. Otherwise, lose 1 point."
+            "en": "If more than half the \\fin{} cards have already been resolved, gain 3 points. Otherwise, lose 1 point."
         },
         "Copies": 1,
         "Priority": 9
     },
     {
         "Name": {
-            "en": "The Abyss"
+            "en": "the ABYSS"
         },
         "Description": {
-            "en": "The player of the next Final to resolve loses 4 points."
+            "en": "The player of the next \\fin{} to resolve loses 4 points."
         },
         "Copies": 1,
         "Priority": 10
     },
     {
         "Name": {
-            "en": "Flagellation"
+            "en": "FLAGELLATION"
         },
         "Description": {
-            "en": "Lose 3 points. You may not lose any further points this round."
+            "en": "Lose 3 points. You may not lose any further points this round, for any reason."
         },
         "Copies": 1,
         "Priority": 11
     },
     {
         "Name": {
-            "en": "Chaos"
+            "en": "CHAOS"
         },
         "Description": {
-            "en": "Pick up 4 Stance cards, shuffle them, and randomly deal them back to where they were taken from face-down."
+            "en": "Pick up 4 played \\stn{} cards, shuffle them, and randomly deal them back to where they were taken from before revealing them."
         },
         "Copies": 1,
         "Priority": 12
     },
     {
         "Name": {
-            "en": "Funeral Pyre"
+            "en": "FUNERAL PYRE"
         },
         "Description": {
             "en": "Take 3 points from one player, and give 3 points to a player other than yourself."
@@ -141,10 +141,10 @@
     },
     {
         "Name": {
-            "en": "Interregnum"
+            "en": "INTERREGNUM"
         },
         "Description": {
-            "en": "Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from them. If you do not, give 3 points to them."
+            "en": "Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from the other player. If you do not, give 3 points to them."
         },
         "Copies": 1,
         "Priority": 14
@@ -154,27 +154,27 @@
             "en": "P'Zea-ia-Gwlfth"
         },
         "Description": {
-            "en": "If this is the last Final to resolve, gain 5 points."
+            "en": "If this is the last \\fin{} to resolve, gain 5 points."
         },
         "Copies": 1,
         "Priority": 15
     },
     {
         "Name": {
-            "en": "Anarchy"
+            "en": "ANARCHY"
         },
         "Description": {
-            "en": "Every player gains 1 point for every Bargain they have played."
+            "en": "Every player gains 1 point for every \\brg{} they have played."
         },
         "Copies": 1,
         "Priority": 16
     },
     {
         "Name": {
-            "en": "Burnt Offerings"
+            "en": "BURNT OFFERINGS"
         },
         "Description": {
-            "en": "You may ignore any points lost due to any one Betrayal."
+            "en": "You may ignore any points lost due to any one \\btr{}."
         },
         "Copies": 1,
         "Priority": 17
@@ -184,37 +184,37 @@
             "en": "MÓRRÍGAN"
         },
         "Description": {
-            "en": "Gain 1 point for every time a player Betrayed a Bargain in this round."
+            "en": "Gain 1 point for every time a player played a \\btr{} against a \\brg{} in this round."
         },
         "Copies": 1,
         "Priority": 18
     },
     {
         "Name": {
-            "en": "Sacrifice"
+            "en": "SACRIFICE"
         },
         "Description": {
-            "en": "Gain 3 points and discard all of your Action and Final cards."
+            "en": "Gain 3 points and discard all of your \\act{} and \\fin{} cards."
         },
         "Copies": 1,
         "Priority": 19
     },
     {
         "Name": {
-            "en": "Contrition"
+            "en": "CONTRITION"
         },
         "Description": {
-            "en": "Ask a player you have Betrayed if they forgive you. If they do, you gain 3 points, and they gain 1 point."
+            "en": "Ask a player you have played a \\btr{} against if they forgive you. If they do, you gain 3 points, and they gain 1 point."
         },
         "Copies": 1,
         "Priority": 20
     },
     {
         "Name": {
-            "en": "Final Rites"
+            "en": "FINAL RITES"
         },
         "Description": {
-            "en": "Select 3 interactions and swap them. You may only select 1 interaction involving yourself."
+            "en": "Select 3 pairs of \\brg{}/\\btr{} and swap them. You may only select 1 interaction involving yourself."
         },
         "Copies": 1,
         "Priority": 100

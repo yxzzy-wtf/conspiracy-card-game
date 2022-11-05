@@ -33,6 +33,7 @@
 \newcommand{\carddescriptionheight}{30mm}
 \newcommand{\carddescriptionmargin}{4mm}
 
+% TODO apply internationalization rules here too
 \newcommand{\card}[1]{\textbf{#1}}
 \newcommand{\act}{\textbf{Action}}
 \newcommand{\stn}{\textbf{Stance}}
@@ -47,27 +48,25 @@
 
         \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
     
-        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
     
         \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
             \ifstrempty{#3}{}{
                 % Instant, add the instant icon
-                \small \textbf{Instant} \textit{#3}. 
+                \small \textbf{Instant} \textit{#3}
 
             }\ifstrempty{#4}{}{
                 % Persistent, add the instant icon
                 \small \textbf{Persistent}.
 
             }
-            \small #2.
+            \small #2
         };
     
     \end{tikzpicture}
 }
 
 % Stances
-\newcommand{\stancetypeheight}{10mm}
-
 \newcommand{\bargainheart}{\ensuremath\varheartsuit}
 \newcommand{\bargainheartoutline}{\ensuremath\heartsuit}
 \newcommand{\betrayalheart}{\rotatebox[origin=c]{180}{\ensuremath\varheartsuit}}
@@ -83,28 +82,41 @@
 
         \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
     
-        \node (type) at (0.12 * \cardwidth, 0.88 * \cardheight) [align = center] {\fontsize{65}{80px} \heart{#3}};
+        \node (type) at (0.12 * \cardwidth + \cardmargin, 0.88 * \cardheight) [align = left] {\fontsize{50px}{50px} \heart{#3}};
 
         \node (basevsbargain) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{\fontsize{50px}{60px} \bargainheart{}}};
         \node (basevsbargainoutline) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \bargainheartoutline{}};
         \node (basevsbetrayal) at (0.86 * \cardwidth, 0.88 * \cardheight - 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \betrayalheart{}};
 
         \node (basevsbargaintext) at (0.75 * \cardwidth + 0.5mm, 0.88 * \cardheight + 1.5mm) [rounded corners = \cardcorners, align = center] {#4};
-        \node (basevsbetrayaltext) at (0.86 * \cardwidth + 0.5mm, 0.88 * \cardheight - 1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{#5}};
+        \node (basevsbetrayaltext) at (0.86 * \cardwidth + 0.5mm, 0.875 * \cardheight - 1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{#5}};
 
         \ifstrempty{#2}
             {
-                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
             }
             {
-                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\LARGE #1};
-                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2.};
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
             }
         
     \end{tikzpicture}
 }
 
 %TODO Finals
+\newcommand{\final}[3]{ % Name, Description, Priority
+\begin{tikzpicture}
+
+    \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+
+    \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \cardnameheight, align = left] {\LARGE #1};
+
+    \node (priority) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \cardnameheight, align = right] {\LARGE #3};
+
+    \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - \cardnameheight - 0.5 * \carddescriptionheight) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
+
+\end{tikzpicture}
+}
 
 %TODO Missions
 
@@ -114,16 +126,114 @@
 
 \thispagestyle{empty}
 
-% TODO autogenerate the below
-% Actions
-\action{DUPLICITY}{You may swap two of your played \stn{} cards}{}{}
+% ACTIONS
+\action{NIL}{All players must immediately play a \stn{} card.}{}{}
+\action{CURIOSITY}{All players holding at least one \btr{} must raise their hands. You may swap any held \stn{} of yours for a \btr{} of their choice.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
+\action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
+\action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
+\action{THAT WHICH is UNSEEN}{You may look at the \act{} draw deck. You may order it or shuffle it in any way you wish before putting it back.}{}{}
+\action{PARANOIA}{All players holding at least one \brg{} must raise their hands. You may swap any held \stn{} of yours with a \brg{} of their choice.}{}{}
+\action{DUPLICITY}{You may swap two of your played \stn{} cards.}{}{}
+\action{BURNING TRUTH}{Choose any player who must reveal their held \stn{} cards to everyone, then give that player this \textbf{Burning Truth} card instead of discarding it.}{}{}
+\action{LANDMINE}{Negate that effect. The player must also discard all their \act{} cards.}{If a player tries to take or swap any of your held cards.}{}
+\action{TOXIC SHOCK}{All other players must discard 2 \act{} cards.}{}{}
+\action{SUBTERFUGE}{You may look at the played \stn{} cards of any one other player.}{}{}
+\action{FAMINE}{While this card is in effect, no \act{} cards may be drawn.}{}{true}
+\action{ABUNDANCE}{Remove \textbf{Famine} from play. Draw as many \act{} cards as there are players, then give each player one card of your choosing.}{}{}
+\action{AMNESIA}{Remove all persistent \act{} cards from play.}{}{}
+\action{HONESTY}{You may turn any of your own played \stn{} cards face-up.}{}{}
+\action{FEAR}{While you hold this card, you may not play any other \act{} cards.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
+\action{TITHES}{All players must give you one of their \act{} cards, of their choosing.}{}{}
+\action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
+\action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
 
-% Stances
+% STANCES
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
-\stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards}{BARGAIN}{3}{-1}
-\stance{“PEACEKEEPING”}{If played against a \brg{}, take all the Action cards of the other player.}{BETRAYAL}{2}{0}
-\stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{SYMBIOSIS}{\brg{}: both players gain an additional 2 points.}{BARGAIN}{3}{-1}
+\stance{EXCOMMUNICATION}{This card must be played face-up.}{BETRAYAL}{4}{0}
+\stance{QUID PRO QUO}{At any time once played, this card can be flipped face-up to negate a player's \act{}.}{BARGAIN}{3}{-1}
+\stance{ASSASSINATION}{\brg{}: the other player loses 2 additional points.}{BETRAYAL}{1}{0}
+\stance{FAIR DEAL}{This card must be played face-up.}{BARGAIN}{4}{-1}
+\stance{COUP d'ETAT}{If played against the player with the most points in the last round, they lose 2 additional points.}{BETRAYAL}{2}{0}
+\stance{CONTRACTUAL OBLIGATIONS}{\btr{}: the other player loses 3 points.}{BARGAIN}{1}{1}
+\stance{A TRUE NAME, SPOKEN SOFTLY}{}{BETRAYAL}{1}{1}
+\stance{PEACEKEEPING}{\btr{}: you may take all \act{} and \fin{} cards of the other player.}{BARGAIN}{3}{-1}
+\stance{“PEACEKEEPING”}{\brg{}: take all the \act{} cards of the other player.}{BETRAYAL}{2}{0}
+\stance{CAMERADERIE}{}{BARGAIN}{4}{-2}
+\stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round.}{BETRAYAL}{2}{0}
+\stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards.}{BARGAIN}{3}{-1}
+\stance{THROWN to the LAMPREYS}{This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \stn{} cards.}{BETRAYAL}{0}{0}
 
+% FINALS
+\final{ENTROPY}{Cancel the effects of all \fin{} cards this round.}{0}
+\final{CURSED DECK}{Swap two played \stn{} cards between any two players other than yourself.}{1}
+\final{STOIC HYMNAL}{Your \stn{} cards cannot be changed by any future \fin{} effects this round.}{2}
+\final{VOW of VENGEANCE}{If you have played a \brg{} against a \btr{}, you may take all their held \act{} and \fin{} cards.}{3}
+\final{ACT of PENANCE}{If you have played a \btr{} against a \brg{}, you may change your stance to a \brg{}, if you are holding one. If you do so, the other player gains 2 extra points.}{4}
+\final{LORD of the PIT}{Gain 3 points for every time you have played a \btr{} against a \btr{} in this round.}{5}
+\final{PIETY}{Gain 3 points for every time you have played a \brg{} against a \btr{} in this round.}{6}
+\final{PERJURY}{Replace one of your played \stn{} cards with one of the opposite \stn{}, if you hold one.}{7}
+\final{MARTYRDOM}{Choose another player. Both of you lose 5 points. If you are already the player with the lowest score before losing these points, only the other player loses 5 points.}{8}
+\final{PANTHEON}{If more than half the \fin{} cards have already been resolved, gain 3 points. Otherwise, lose 1 point.}{9}
+\final{the ABYSS}{The player of the next \fin{} to resolve loses 4 points.}{10}
+\final{FLAGELLATION}{Lose 3 points. You may not lose any further points this round, for any reason.}{11}
+\final{CHAOS}{Pick up 4 played \stn{} cards, shuffle them, and randomly deal them back to where they were taken from before revealing them.}{12}
+\final{FUNERAL PYRE}{Take 3 points from one player, and give 3 points to a player other than yourself.}{13}
+\final{INTERREGNUM}{Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from the other player. If you do not, give 3 points to them.}{14}
+\final{P'Zea-ia-Gwlfth}{If this is the last \fin{} to resolve, gain 5 points.}{15}
+\final{ANARCHY}{Every player gains 1 point for every \brg{} they have played.}{16}
+\final{BURNT OFFERINGS}{You may ignore any points lost due to any one \btr{}.}{17}
+\final{MÓRRÍGAN}{Gain 1 point for every time a player played a \btr{} against a \brg{} in this round.}{18}
+\final{SACRIFICE}{Gain 3 points and discard all of your \act{} and \fin{} cards.}{19}
+\final{CONTRITION}{Ask a player you have played a \btr{} against if they forgive you. If they do, you gain 3 points, and they gain 1 point.}{20}
+\final{FINAL RITES}{Select 3 pairs of \brg{}/\btr{} and swap them. You may only select 1 interaction involving yourself.}{100}
 
 \end{document}
