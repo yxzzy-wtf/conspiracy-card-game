@@ -24,6 +24,8 @@
 \PreviewEnvironment{tikzpicture}
 \setlength{\PreviewBorder}{0.125in}
 
+\hyphenpenalty=100000
+
 % All cards
 \newcommand{\cardmargin}{2mm}
 \newcommand{\cardcorners}{4mm}
@@ -39,8 +41,15 @@
 \newcommand{\stn}{\textbf{Stance}}
 \newcommand{\fin}{\textbf{Final}}
 \newcommand{\mis}{\textbf{Mission}}
-\newcommand{\brg}{\bargainheartoutline}
+%\newcommand{\brg}{\textcolor{white}\bargainheart{\textcolor{black}\bargainheartoutline}}
+\newcommand{\brg}{{\ooalign{\textcolor{white}\bargainheart\cr\hss\textcolor{black}\bargainheartoutline\kern .025em\hss}}}
 \newcommand{\btr}{\betrayalheart}
+
+
+\newcommand{\brgbrg}{\brg\!\!\brg}
+\newcommand{\btrbtr}{\btr\!\!\btr}
+\newcommand{\btrbrg}{\btr\!\!\brg}
+\newcommand{\brgbtr}{\brg\!\!\btr}
 
 % Actions
 \newcommand{\action}[4]{ % Name, Description, Instant?, Persistent?
@@ -48,9 +57,9 @@
 
         \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
     
-        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 2 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
     
-        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
+        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
             \ifstrempty{#3}{}{
                 % Instant, add the instant icon
                 \small \textbf{Instant} \textit{#3}
@@ -97,7 +106,7 @@
             }
             {
                 \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
-                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
+                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
             }
         
     \end{tikzpicture}
@@ -109,11 +118,13 @@
 
     \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
 
-    \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \cardnameheight, align = left] {\LARGE #1};
+    \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+    
+    \node (priority) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 0.5 * \cardnameheight) [minimum height = \cardnameheight, align = right] {\LARGE #3};
 
-    \node (priority) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \cardnameheight, align = right] {\LARGE #3};
-
-    \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - 0.5* \cardmargin - \cardnameheight - 0.5 * \carddescriptionheight) [draw = gray, fill = lightgray, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
+    \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
+        \small #2
+    };
 
 \end{tikzpicture}
 }
@@ -216,10 +227,10 @@
 \final{ENTROPY}{Cancel the effects of all \fin{} cards this round.}{0}
 \final{CURSED DECK}{Swap two played \stn{} cards between any two players other than yourself.}{1}
 \final{STOIC HYMNAL}{Your \stn{} cards cannot be changed by any future \fin{} effects this round.}{2}
-\final{VOW of VENGEANCE}{If you have played a \brg{} against a \btr{}, you may take all their held \act{} and \fin{} cards.}{3}
-\final{ACT of PENANCE}{If you have played a \btr{} against a \brg{}, you may change your stance to a \brg{}, if you are holding one. If you do so, the other player gains 2 extra points.}{4}
-\final{LORD of the PIT}{Gain 3 points for every time you have played a \btr{} against a \btr{} in this round.}{5}
-\final{PIETY}{Gain 3 points for every time you have played a \brg{} against a \btr{} in this round.}{6}
+\final{VOW of VENGEANCE}{If you have played a \brgbtr{}, you may take all their held \act{} and \fin{} cards.}{3}
+\final{ACT of PENANCE}{If you have played a \btrbrg{}, you may change your stance to a \brg{}, if you are holding one. If you do so, the other player gains 2 extra points.}{4}
+\final{LORD of the PIT}{Gain 3 points for every time you have played a \btrbtr{} in this round.}{5}
+\final{PIETY}{Gain 3 points for each of your \brgbtr{} in this round.}{6}
 \final{PERJURY}{Replace one of your played \stn{} cards with one of the opposite \stn{}, if you hold one.}{7}
 \final{MARTYRDOM}{Choose another player. Both of you lose 5 points. If you are already the player with the lowest score before losing these points, only the other player loses 5 points.}{8}
 \final{PANTHEON}{If more than half the \fin{} cards have already been resolved, gain 3 points. Otherwise, lose 1 point.}{9}
@@ -229,11 +240,11 @@
 \final{FUNERAL PYRE}{Take 3 points from one player, and give 3 points to a player other than yourself.}{13}
 \final{INTERREGNUM}{Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from the other player. If you do not, give 3 points to them.}{14}
 \final{P'Zea-ia-Gwlfth}{If this is the last \fin{} to resolve, gain 5 points.}{15}
-\final{ANARCHY}{Every player gains 1 point for every \brg{} they have played.}{16}
+\final{ANARCHY}{Every player gains 1 point for every \brg{} they have played. You gain an extra point for each \brg{} you have played.}{16}
 \final{BURNT OFFERINGS}{You may ignore any points lost due to any one \btr{}.}{17}
-\final{MÓRRÍGAN}{Gain 1 point for every time a player played a \btr{} against a \brg{} in this round.}{18}
+\final{MÓRRÍGAN}{Gain 1 point for every \brgbtr{} in this round.}{18}
 \final{SACRIFICE}{Gain 3 points and discard all of your \act{} and \fin{} cards.}{19}
 \final{CONTRITION}{Ask a player you have played a \btr{} against if they forgive you. If they do, you gain 3 points, and they gain 1 point.}{20}
-\final{FINAL RITES}{Select 3 pairs of \brg{}/\btr{} and swap them. You may only select 1 interaction involving yourself.}{100}
+\final{FINAL RITES}{Select 3 pairs of \brgbtr{} and swap them. You may only select 1 interaction involving yourself.}{100}
 
 \end{document}
