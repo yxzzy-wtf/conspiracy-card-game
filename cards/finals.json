@@ -34,7 +34,7 @@
             "en": "VOW of VENGEANCE"
         },
         "Description": {
-            "en": "If you have played a \\brg{} against a \\btr{}, you may take all their held \\act{} and \\fin{} cards."
+            "en": "If you have played a \\brgbtr{}, you may take all their held \\act{} and \\fin{} cards."
         },
         "Copies": 1,
         "Priority": 3
@@ -44,7 +44,7 @@
             "en": "ACT of PENANCE"
         },
         "Description": {
-            "en": "If you have played a \\btr{} against a \\brg{}, you may change your stance to a \\brg{}, if you are holding one. If you do so, the other player gains 2 extra points."
+            "en": "If you have played a \\btrbrg{}, you may change your stance to a \\brg{}, if you are holding one. If you do so, the other player gains 2 extra points."
         },
         "Copies": 1,
         "Priority": 4
@@ -54,7 +54,7 @@
             "en": "LORD of the PIT"
         },
         "Description": {
-            "en": "Gain 3 points for every time you have played a \\btr{} against a \\btr{} in this round."
+            "en": "Gain 3 points for every time you have played a \\btrbtr{} in this round."
         },
         "Copies": 1,
         "Priority": 5
@@ -64,7 +64,7 @@
             "en": "PIETY"
         },
         "Description": {
-            "en": "Gain 3 points for every time you have played a \\brg{} against a \\btr{} in this round."
+            "en": "Gain 3 points for each of your \\brgbtr{} in this round."
         },
         "Copies": 1,
         "Priority": 6
@@ -164,7 +164,7 @@
             "en": "ANARCHY"
         },
         "Description": {
-            "en": "Every player gains 1 point for every \\brg{} they have played."
+            "en": "Every player gains 1 point for every \\brg{} they have played. You gain an extra point for each \\brg{} you have played."
         },
         "Copies": 1,
         "Priority": 16
@@ -184,7 +184,7 @@
             "en": "MÓRRÍGAN"
         },
         "Description": {
-            "en": "Gain 1 point for every time a player played a \\btr{} against a \\brg{} in this round."
+            "en": "Gain 1 point for every \\brgbtr{} in this round."
         },
         "Copies": 1,
         "Priority": 18
@@ -214,7 +214,7 @@
             "en": "FINAL RITES"
         },
         "Description": {
-            "en": "Select 3 pairs of \\brg{}/\\btr{} and swap them. You may only select 1 interaction involving yourself."
+            "en": "Select 3 pairs of \\brgbtr{} and swap them. You may only select 1 interaction involving yourself."
         },
         "Copies": 1,
         "Priority": 100
