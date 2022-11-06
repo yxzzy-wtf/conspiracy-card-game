@@ -9,7 +9,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 20
+        "Copies": 25
     },
     {
         "Name": {
@@ -20,7 +20,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 20
+        "Copies": 25
     },
     {
         "Name": {
@@ -181,6 +181,90 @@
             "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \\stn{} cards."
         },
         "Type": "Betrayal",
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "QUISLING"
+        },
+        "Description": {
+            "en": "\\brg{}: both players gain an additional 2 points."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 2,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "TRUE LOVE"
+        },
+        "Description": {
+            "en": "If this card is \\brgbrg{} with another \\textbf{True Love}, you do not lose any base points from \\brgbtr{}."
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": -3,
+        "AgainstBargain": 3,
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "ZERO SUM"
+        },
+        "Description": {
+            "en": "Completely negate the points gained or lost by both players in this interaction."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 0,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "SONNET"
+        },
+        "Description": {
+            "en": "If this is played \\brgbtr{}, you may sing a song to avoid losing points."
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "HOSTILE TAKEOVER"
+        },
+        "Description": {
+            "en": "Gain 1 point for every \\brg{} you have played."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": -1,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "the SUBLIME"
+        },
+        "Description": {
+            "en": ""
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 2,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "NIHILISM"
+        },
+        "Description": {
+            "en": ""
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 2,
         "Copies": 1
     }
 ]
