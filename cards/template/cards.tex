@@ -19,6 +19,7 @@
 \usepackage{graphicx, txfonts}
 \usepackage{anyfontsize}
 \usepackage{ifthen}
+\usepackage{array}
 
 \RequirePackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
@@ -50,6 +51,71 @@
 \newcommand{\btrbtr}{\btr\!\!\btr}
 \newcommand{\btrbrg}{\btr\!\!\brg}
 \newcommand{\brgbtr}{\brg\!\!\btr}
+
+% Stance Maps
+\newcommand{\matmargins}{30mm}
+\newcommand{\matwidth}{267mm}
+\newcommand{\matheight}{180mm}
+\newcommand{\matpadding}{3mm}
+
+\newcommand{\matbaseangle}{261}
+\newcommand{\matrotationper}{33}
+
+\newcommand{\matcardexperimental}[2]{
+    \draw[rounded corners = \cardcorners, #1, rotate around={\matbaseangle + #2 * \matrotationper:(0.5 * \matwidth, 0.8 * \cardwidth + \cardmargin)}] (0.5 * \matwidth - 0.5 * \cardwidth, 1.4 * \cardwidth + \cardmargin) rectangle ++(\cardwidth - \cardmargin, \cardheight - \cardmargin);
+}
+
+\newcommand{\stancematexperimental}[1]{ % Name, Description, Instant?, Persistent?
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\matwidth, \matheight);
+
+        \newcounter{Rotations}
+
+        \matcard{red}{0}
+        \matcard{red}{1}
+        \matcard{red}{2}
+        \matcard{red}{3}
+        \matcard{red}{4}
+        \matcard{red}{5}
+        \matcard{red}{6}
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large};
+    
+    \end{tikzpicture}
+}
+
+\newcommand{\matinner}{1mm}
+
+\newcommand{\matcard}[4]{
+
+    \ifthenelse{\equal{#3}{#4}}
+        {
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.9) [align = center] {YOU (NOTES \& POINTS)};
+        }
+        {
+            \draw[rounded corners = \cardcorners, draw] (\matpadding + \cardwidth * #1 + \matinner * #1, \matpadding + \cardheight * #2) rectangle ++(\cardwidth - \cardmargin, \cardheight - \cardmargin);
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.5) [align = center] {PLAYER #3};
+        }
+}
+
+\newcommand{\stancemat}[1]{ % Player #
+    \begin{tikzpicture}
+
+        \draw[white] (0,0) rectangle (\matwidth, \matheight);
+
+        \matcard{0}{0}{1}{#1}
+        \matcard{1}{0}{2}{#1}
+        \matcard{2}{0}{3}{#1}
+        \matcard{3}{0}{4}{#1}
+
+        \matcard{0}{1}{4}{#1}
+        \matcard{1}{1}{5}{#1}
+        \matcard{2}{1}{6}{#1}
+        \matcard{3}{1}{7}{#1}
+    
+    \end{tikzpicture}
+}
 
 % Actions
 \newcommand{\action}[4]{ % Name, Description, Instant?, Persistent?
@@ -137,6 +203,15 @@
 
 \thispagestyle{empty}
 
+\stancemat{1}
+\stancemat{2}
+\stancemat{3}
+\stancemat{4}
+\stancemat{5}
+\stancemat{6}
+\stancemat{7}
+\stancemat{8}
+
 % RULES
 
 \begin{tikzpicture}
@@ -147,7 +222,7 @@
     \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 1/3};
     \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{PREGAME}};
 
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
+    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
         \footnotesize 
         For \textit{n} players, deal each player:\\
         ~~\textit{n} + 2 \stn{} cards\\
@@ -171,7 +246,7 @@
     \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 2/3};
     \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{ROUNDS}};
 
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
+    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
         \footnotesize 
         Each player must do the following in their turn: \\
         1. If the player has played a \stn{} against every other player, their turn is skipped. Otherwise: \\
@@ -193,7 +268,7 @@
     \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 3/3};
     \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{POST-ROUND}};
 
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
+    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
         \footnotesize 
         Once all \stn{} mats have been filled, the ??? part of the round is complete. Before revealing each of your \stn{} cards, each player may choose and play a \fin{} card, face-down. \\
         ~\\
