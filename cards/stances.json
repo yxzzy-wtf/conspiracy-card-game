@@ -27,7 +27,7 @@
             "en": "SYMBIOSIS"
         },
         "Description": {
-            "en": "\\brg{}: both players gain an additional 2 points."
+            "en": "\\brg{}: both players gain an additional 2 \\pnt{}."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -62,7 +62,7 @@
             "en": "ASSASSINATION"
         },
         "Description": {
-            "en": "\\brg{}: the other player loses 2 additional points."
+            "en": "\\brg{}: the other player loses 2 additional \\pnts{}."
         },
         "Type": "Betrayal",
         "AgainstBargain": 1,
@@ -85,7 +85,7 @@
             "en": "COUP d'ETAT"
         },
         "Description": {
-            "en": "If played against the player with the most points in the last round, they lose 2 additional points."
+            "en": "If played against the player with the most \\pnts{} in the last round, they lose 2 additional \\pnts{}."
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
@@ -96,7 +96,7 @@
             "en": "CONTRACTUAL OBLIGATIONS"
         },
         "Description": {
-            "en": "\\btr{}: the other player loses 3 points."
+            "en": "\\btr{}: the other player loses 3 \\pnts{}."
         },
         "Type": "Bargain",
         "AgainstBetrayal": 1,
@@ -188,7 +188,7 @@
             "en": "QUISLING"
         },
         "Description": {
-            "en": "\\brg{}: both players gain an additional 2 points."
+            "en": "\\brg{}: both players gain an additional 2 \\pnts{}."
         },
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
@@ -200,7 +200,7 @@
             "en": "TRUE LOVE"
         },
         "Description": {
-            "en": "If this card is \\brgbrg{} with another \\textbf{True Love}, you do not lose any base points from \\brgbtr{}."
+            "en": "If this card is \\brgbrg{} with another \\textbf{True Love}, you do not lose any base \\pnts{} from \\brgbtr{} in this round."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -3,
@@ -212,7 +212,7 @@
             "en": "ZERO SUM"
         },
         "Description": {
-            "en": "Completely negate the points gained or lost by both players in this interaction."
+            "en": "Completely negate the \\pnts{} gained or lost by both players in this interaction."
         },
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
@@ -224,7 +224,7 @@
             "en": "SONNET"
         },
         "Description": {
-            "en": "If this is played \\brgbtr{}, you may sing a song to avoid losing points."
+            "en": "If this is played \\brgbtr{}, you may sing a song to avoid losing \\pnts{}."
         },
         "Type": "Bargain",
         "AgainstBetrayal": -1,
@@ -236,7 +236,7 @@
             "en": "HOSTILE TAKEOVER"
         },
         "Description": {
-            "en": "Gain 1 point for every \\brg{} you have played."
+            "en": "Gain 1 \\pnt{} for every \\brg{} you have played."
         },
         "Type": "Betrayal",
         "AgainstBetrayal": -1,

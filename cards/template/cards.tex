@@ -5,6 +5,7 @@
 \usepackage{pdflscape}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{alchemy}
 \usetikzlibrary{positioning}
 
 \usepackage{pifont}
@@ -45,6 +46,8 @@
 %\newcommand{\brg}{\textcolor{white}\bargainheart{\textcolor{black}\bargainheartoutline}}
 \newcommand{\brg}{{\ooalign{\textcolor{white}\bargainheart\cr\hss\textcolor{black}\bargainheartoutline\kern .025em\hss}}}
 \newcommand{\btr}{\betrayalheart}
+\newcommand{\pnt}{\textbf{Soul}}
+\newcommand{\pnts}{\textbf{Souls}}
 
 
 \newcommand{\brgbrg}{\brg\!\!\brg}
@@ -53,6 +56,30 @@
 \newcommand{\brgbtr}{\brg\!\!\btr}
 
 % Stance Maps
+
+% PLAYER CARDS
+\newcommand{\player}[1]{
+    \ifthenelse{\equal{#1}{\string 1}}{\lead{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 2}}{\fermentation{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 3}}{\phosphorus{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 4}}{\incineration{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 5}}{\dissolution{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 6}}{\digestion{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 7}}{\silver{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 8}}{\transmutation{scale=8, line width=6pt}}{}
+}
+
+\newcommand{\playersml}[1]{
+    \ifthenelse{\equal{#1}{\string 1}}{\lead{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 2}}{\fermentation{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 3}}{\phosphorus{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 4}}{\incineration{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 5}}{\dissolution{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 6}}{\digestion{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 7}}{\silver{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 8}}{\transmutation{scale=6, line width=4pt}}{}
+}
+
 \newcommand{\matmargins}{30mm}
 \newcommand{\matwidth}{267mm}
 \newcommand{\matheight}{180mm}
@@ -91,12 +118,23 @@
 
     \ifthenelse{\equal{#3}{#4}}
         {
-            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.9) [align = center] {YOU (NOTES \& POINTS)};
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.9) [align = center] {YOU (NOTES \& SOULS)};
         }
         {
             \draw[rounded corners = \cardcorners, draw] (\matpadding + \cardwidth * #1 + \matinner * #1, \matpadding + \cardheight * #2) rectangle ++(\cardwidth - \cardmargin, \cardheight - \cardmargin);
-            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.5) [align = center] {PLAYER #3};
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.5) [align = center] {\player{#3}};
         }
+}
+
+
+\newcommand{\playercard}[1]{ % Name, Description, Instant?, Persistent?
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.25) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0, align = center] {\Large \playersml{#1}};
+    
+    \end{tikzpicture}
 }
 
 \newcommand{\stancemat}[1]{ % Player #
@@ -109,10 +147,10 @@
         \matcard{2}{0}{3}{#1}
         \matcard{3}{0}{4}{#1}
 
-        \matcard{0}{1}{4}{#1}
-        \matcard{1}{1}{5}{#1}
-        \matcard{2}{1}{6}{#1}
-        \matcard{3}{1}{7}{#1}
+        \matcard{0}{1}{5}{#1}
+        \matcard{1}{1}{6}{#1}
+        \matcard{2}{1}{7}{#1}
+        \matcard{3}{1}{8}{#1}
     
     \end{tikzpicture}
 }
@@ -212,6 +250,15 @@
 \stancemat{7}
 \stancemat{8}
 
+\playercard{1}
+\playercard{2}
+\playercard{3}
+\playercard{4}
+\playercard{5}
+\playercard{6}
+\playercard{7}
+\playercard{8}
+
 % RULES
 
 \begin{tikzpicture}
@@ -274,22 +321,21 @@
         ~\\
         At the same time, all players must flip their played \stn{} cards face-up, along with their played \fin{} card. \\
         ~\\
-        Resolve the effects of \fin{} cards in order of priority, lowest-to-highest. Once they have all been resolved, calculate points by resolving all \stn{} interactions in a clockwise direction. Then, go onto the next round!
+        Resolve the effects of \fin{} cards in order of priority, lowest-to-highest. Once they have all been resolved, calculate \pnts{} by resolving all \stn{} interactions in a clockwise direction. Then, go onto the next round!
         Play 4 rounds if there are fewer than 5 players, otherwise play 3 rounds. \\
     };
 
 \end{tikzpicture}
 
-% QUICK REFERENCE
 
 % ACTIONS
 \action{NIL}{All players must immediately play a \stn{} card.}{}{}
 \action{CURIOSITY}{All players holding at least one \btr{} must raise their hands. You may swap any held \stn{} of yours for a \btr{} of their choice.}{}{}
-\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
-\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
-\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
-\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
-\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
 \action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
 \action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
@@ -305,9 +351,9 @@
 \action{AMNESIA}{Remove all persistent \act{} cards from play.}{}{}
 \action{HONESTY}{You may turn any of your own played \stn{} cards face-up.}{}{}
 \action{FEAR}{While you hold this card, you may not play any other \act{} cards.}{}{}
-\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
-\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
-\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \textbf{Love}, you lose 2 points.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
 \action{TITHES}{All players must give you one of their \act{} cards, of their choosing.}{}{}
 \action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
 \action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
@@ -363,13 +409,13 @@
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
-\stance{SYMBIOSIS}{\brg{}: both players gain an additional 2 points.}{BARGAIN}{3}{-1}
+\stance{SYMBIOSIS}{\brg{}: both players gain an additional 2 \pnt{}.}{BARGAIN}{3}{-1}
 \stance{EXCOMMUNICATION}{This card must be played face-up.}{BETRAYAL}{4}{0}
 \stance{QUID PRO QUO}{At any time once played, this card can be flipped face-up to negate a player's \act{}.}{BARGAIN}{3}{-1}
-\stance{ASSASSINATION}{\brg{}: the other player loses 2 additional points.}{BETRAYAL}{1}{0}
+\stance{ASSASSINATION}{\brg{}: the other player loses 2 additional \pnts{}.}{BETRAYAL}{1}{0}
 \stance{FAIR DEAL}{This card must be played face-up.}{BARGAIN}{4}{-1}
-\stance{COUP d'ETAT}{If played against the player with the most points in the last round, they lose 2 additional points.}{BETRAYAL}{2}{0}
-\stance{CONTRACTUAL OBLIGATIONS}{\btr{}: the other player loses 3 points.}{BARGAIN}{1}{1}
+\stance{COUP d'ETAT}{If played against the player with the most \pnts{} in the last round, they lose 2 additional \pnts{}.}{BETRAYAL}{2}{0}
+\stance{CONTRACTUAL OBLIGATIONS}{\btr{}: the other player loses 3 \pnts{}.}{BARGAIN}{1}{1}
 \stance{A TRUE NAME, SPOKEN SOFTLY}{}{BETRAYAL}{1}{1}
 \stance{PEACEKEEPING}{\btr{}: you may take all \act{} and \fin{} cards of the other player.}{BARGAIN}{3}{-1}
 \stance{“PEACEKEEPING”}{\brg{}: take all the \act{} cards of the other player.}{BETRAYAL}{2}{0}
@@ -377,12 +423,12 @@
 \stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round.}{BETRAYAL}{2}{0}
 \stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards.}{BARGAIN}{3}{-1}
 \stance{THROWN to the LAMPREYS}{This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \stn{} cards.}{BETRAYAL}{0}{0}
-\stance{QUISLING}{\brg{}: both players gain an additional 2 points.}{BETRAYAL}{2}{0}
-\stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base points from \brgbtr{}.}{BARGAIN}{3}{-3}
-\stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base points from \brgbtr{}.}{BARGAIN}{3}{-3}
-\stance{ZERO SUM}{Completely negate the points gained or lost by both players in this interaction.}{BETRAYAL}{0}{0}
-\stance{SONNET}{If this is played \brgbtr{}, you may sing a song to avoid losing points.}{BARGAIN}{3}{-1}
-\stance{HOSTILE TAKEOVER}{Gain 1 point for every \brg{} you have played.}{BETRAYAL}{-1}{-1}
+\stance{QUISLING}{\brg{}: both players gain an additional 2 \pnts{}.}{BETRAYAL}{2}{0}
+\stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base \pnts{} from \brgbtr{} in this round.}{BARGAIN}{3}{-3}
+\stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base \pnts{} from \brgbtr{} in this round.}{BARGAIN}{3}{-3}
+\stance{ZERO SUM}{Completely negate the \pnts{} gained or lost by both players in this interaction.}{BETRAYAL}{0}{0}
+\stance{SONNET}{If this is played \brgbtr{}, you may sing a song to avoid losing \pnts{}.}{BARGAIN}{3}{-1}
+\stance{HOSTILE TAKEOVER}{Gain 1 \pnt{} for every \brg{} you have played.}{BETRAYAL}{-1}{-1}
 \stance{the SUBLIME}{}{BARGAIN}{2}{0}
 \stance{NIHILISM}{}{BETRAYAL}{2}{0}
 
@@ -391,23 +437,23 @@
 \final{CURSED DECK}{Swap two played \stn{} cards between any two players other than yourself.}{1}
 \final{STOIC HYMNAL}{Your \stn{} cards cannot be changed by any future \fin{} effects this round.}{2}
 \final{VOW of VENGEANCE}{If you have played a \brgbtr{}, you may take all their held \act{} and \fin{} cards.}{3}
-\final{ACT of PENANCE}{If you have played a \btrbrg{}, you may change your stance to a \brg{}, if you are holding one. If you do so, the other player gains 2 extra points.}{4}
-\final{LORD of the PIT}{Gain 3 points for every time you have played a \btrbtr{} in this round.}{5}
-\final{PIETY}{Gain 3 points for each of your \brgbtr{} in this round.}{6}
+\final{ACT of PENANCE}{If you have played a \btrbrg{}, you may change your stance to a \brg{}, if you are holding one. If you do so, the other player gains 2 extra \pnts{}.}{4}
+\final{LORD of the PIT}{Gain 3 \pnts{} for every time you have played a \btrbtr{} in this round.}{5}
+\final{PIETY}{Gain 3 \pnts{} for each of your \brgbtr{} in this round.}{6}
 \final{PERJURY}{Replace one of your played \stn{} cards with one of the opposite \stn{}, if you hold one.}{7}
-\final{MARTYRDOM}{Choose another player. Both of you lose 5 points. If you are already the player with the lowest score before losing these points, only the other player loses 5 points.}{8}
-\final{PANTHEON}{If more than half the \fin{} cards have already been resolved, gain 3 points. Otherwise, lose 1 point.}{9}
-\final{the ABYSS}{The player of the next \fin{} to resolve loses 4 points.}{10}
-\final{FLAGELLATION}{Lose 3 points. You may not lose any further points this round, for any reason.}{11}
+\final{MARTYRDOM}{Choose another player. Both of you lose 5 \pnts{}. If you are already the player with the lowest score before losing these \pnts{}, only the other player loses 5 \pnts{}.}{8}
+\final{PANTHEON}{If more than half the \fin{} cards have already been resolved, gain 3 \pnts{}. Otherwise, lose 1 \pnt{}.}{9}
+\final{the ABYSS}{The player of the next \fin{} to resolve loses 4 \pnts{}.}{10}
+\final{FLAGELLATION}{Lose 3 \pnts{}. You may not lose any further \pnts{} this round, for any reason.}{11}
 \final{CHAOS}{Pick up 4 played \stn{} cards, shuffle them, and randomly deal them back to where they were taken from before revealing them.}{12}
-\final{FUNERAL PYRE}{Take 3 points from one player, and give 3 points to a player other than yourself.}{13}
-\final{INTERREGNUM}{Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 points from the other player. If you do not, give 3 points to them.}{14}
-\final{P'Zea-ia-Gwlfth}{If this is the last \fin{} to resolve, gain 5 points.}{15}
-\final{ANARCHY}{Every player gains 1 point for every \brg{} they have played. You gain an extra point for each \brg{} you have played.}{16}
-\final{BURNT OFFERINGS}{You may ignore any points lost due to any one \btr{}.}{17}
-\final{MÓRRÍGAN}{Gain 1 point for every \brgbtr{} in this round.}{18}
-\final{SACRIFICE}{Gain 3 points and discard all of your \act{} and \fin{} cards.}{19}
-\final{CONTRITION}{Ask a player you have played a \btr{} against if they forgive you. If they do, you gain 3 points, and they gain 1 point.}{20}
+\final{FUNERAL PYRE}{Take 3 \pnts{} from one player, and give 3 \pnts{} to a player other than yourself.}{13}
+\final{INTERREGNUM}{Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 \pnts{} from the other player. If you do not, give 3 \pnts{} to them.}{14}
+\final{P'Zea-ia-Gwlfth}{If this is the last \fin{} to resolve, gain 5 \pnts{}.}{15}
+\final{ANARCHY}{Every player gains 1 \pnt{} for every \brg{} they have played. You gain an extra \pnt{} for each \brg{} you have played.}{16}
+\final{BURNT OFFERINGS}{You may ignore any \pnts{} lost due to any one \btr{}.}{17}
+\final{MÓRRÍGAN}{Gain 1 \pnt{} for every \brgbtr{} in this round.}{18}
+\final{SACRIFICE}{Gain 3 \pnts{} and discard all of your \act{} and \fin{} cards.}{19}
+\final{CONTRITION}{Ask a player you have played a \btr{} against if they forgive you. If they do, you gain 3 \pnts{}, and they gain 1 \pnt{}.}{20}
 \final{FINAL RITES}{Select 3 pairs of \brgbtr{} and swap them. You may only select 1 interaction involving yourself.}{100}
 
 \end{document}

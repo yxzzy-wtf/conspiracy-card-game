@@ -22,7 +22,7 @@
             "en": "CACOPHONY"
         },
         "Description": {
-            "en": "All players must immediately reveal their \\textbf{Cacophony} cards. If there are 3 or fewer other \\textbf{Cacophony} cards revealed, gain that many points. Otherwise, discard all your \\act{} cards."
+            "en": "All players must immediately reveal their \\textbf{Cacophony} cards. If there are 3 or fewer other \\textbf{Cacophony} cards revealed, gain that many \\pnts{}. Otherwise, discard all your \\act{} cards."
         },
         "Copies": 5
     },
@@ -175,7 +175,7 @@
             "en": "LOVE"
         },
         "Description": {
-            "en": "If another player has \\textbf{Love}, they may reveal it and discard it, and you both gain 2 points. Only the first player to reveal will gain points. If no player reveals \\textbf{Love}, you lose 2 points."
+            "en": "If another player has \\textbf{Love}, they may reveal it and discard it, and you both gain 2 \\pnts{}. Only the first player to reveal will gain \\pnts{}. If no player reveals \\textbf{Love}, you lose 2 \\pnts{}."
         },
         "Copies": 3
     },

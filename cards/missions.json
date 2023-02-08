@@ -4,7 +4,7 @@
             "en": "Masochism Tango"
         },
         "Description": {
-            "en": "In a single round, Bargain with two Betrayers."
+            "en": "In a single round, \\brg{} with two \\brt{}."
         },
         "Points": 6,
         "Copies": 1
@@ -17,6 +17,26 @@
             "en": "Get a player to say 'I love you'. Then shout 'Ha! Idiot.'"
         },
         "Points": 8,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Con Artist"
+        },
+        "Description": {
+            "en": "Convince a player to give you at least 3 \\pnts{} at once."
+        },
+        "Points": 6,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "Poisoned Charity"
+        },
+        "Description": {
+            "en": "Play only \\brg{} in a single round."
+        },
+        "Points": 6,
         "Copies": 1
     }
 ]
