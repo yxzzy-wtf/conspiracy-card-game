@@ -263,8 +263,8 @@
             "en": ""
         },
         "Type": "Betrayal",
-        "AgainstBetrayal": 0,
-        "AgainstBargain": 2,
+        "AgainstBetrayal": 1,
+        "AgainstBargain": 1,
         "Copies": 1
     }
 ]
