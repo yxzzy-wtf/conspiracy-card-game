@@ -6,7 +6,7 @@
         "Description": {
             "en": "All players must immediately play a \\stn{} card."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -15,7 +15,7 @@
         "Description": {
             "en": "All players holding at least one \\btr{} must raise their hands. You may swap any held \\stn{} of yours for a \\btr{} of their choice."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -24,7 +24,7 @@
         "Description": {
             "en": "All players must immediately reveal their \\textbf{Cacophony} cards. If there are 3 or fewer other \\textbf{Cacophony} cards revealed, gain that many \\pnts{}. Otherwise, discard all your \\act{} cards."
         },
-        "Copies": 5
+        "Copies": 7
     },
     {
         "Name": {
@@ -33,7 +33,7 @@
         "Description": {
             "en": "All other players discard 2 \\act{} cards. If \\textbf{Joy} is in play, double this effect."
         },
-        "Copies": 1,
+        "Copies": 2,
         "Persistent": true
     },
     {
@@ -43,7 +43,7 @@
         "Description": {
             "en": "You may play 3 \\act{} cards immediately. If \\textbf{Misery} has been played this round, you may play 3 \\act{} cards immediately instead."
         },
-        "Copies": 1,
+        "Copies": 2,
         "Persistent": true
     },
     {
@@ -53,7 +53,7 @@
         "Description": {
             "en": "Cancel the effects of another player's \\act{}."
         },
-        "Copies": 1,
+        "Copies": 3,
         "Instant": {
             "en": "At any point while a player is playing an \\act{}."
         }
@@ -65,7 +65,7 @@
         "Description": {
             "en": "You may look at the \\act{} draw deck. You may order it or shuffle it in any way you wish before putting it back."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -74,7 +74,7 @@
         "Description": {
             "en": "All players holding at least one \\brg{} must raise their hands. You may swap any held \\stn{} of yours with a \\brg{} of their choice."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -83,7 +83,7 @@
         "Description": {
             "en": "You may swap two of your played \\stn{} cards."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -104,7 +104,7 @@
         "Instant": {
             "en": "If a player tries to take or swap any of your held cards."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -113,7 +113,7 @@
         "Description": {
             "en": "All other players must discard 2 \\act{} cards."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -122,7 +122,7 @@
         "Description": {
             "en": "You may look at the played \\stn{} cards of any one other player."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -132,7 +132,7 @@
             "en": "While this card is in effect, no \\act{} cards may be drawn."
         },
         "Persistent": true,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -141,7 +141,7 @@
         "Description": {
             "en": "Remove \\textbf{Famine} from play. Draw as many \\act{} cards as there are players, then give each player one card of your choosing."
         },
-        "Copies": 1
+        "Copies": 4
     },
     {
         "Name": {
@@ -150,7 +150,7 @@
         "Description": {
             "en": "Remove all persistent \\act{} cards from play."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -159,16 +159,16 @@
         "Description": {
             "en": "You may turn any of your own played \\stn{} cards face-up."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
             "en": "FEAR"
         },
         "Description": {
-            "en": "While you hold this card, you may not play any other \\act{} cards."
+            "en": "No effect. While you hold this card, you may not play any other \\act{} cards."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -177,7 +177,7 @@
         "Description": {
             "en": "If another player has \\textbf{Love}, they may reveal it and discard it, and you both gain 2 \\pnts{}. Only the first player to reveal will gain \\pnts{}. If no player reveals \\textbf{Love}, you lose 2 \\pnts{}."
         },
-        "Copies": 3
+        "Copies": 5
     },
     {
         "Name": {
@@ -186,7 +186,7 @@
         "Description": {
             "en": "All players must give you one of their \\act{} cards, of their choosing."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -195,7 +195,7 @@
         "Description": {
             "en": "All players, including yourself, must reveal one of their played \\stn{} cards and then return it to their hand."
         },
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -207,6 +207,121 @@
         "Instant": {
             "en": "If an \\act{} allows a player to take cards from your hand"
         },
-        "Copies": 1
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "SUCKER PUNCH"
+        }, 
+        "Description": {
+            "en": "Flip their \\stn{} over and reveal it. If it is \\brg{}, gain 1 \\pnt{}. If it is \\btr{}, take 2 \\pnts{} from the player."
+        },
+        "Instant": {
+            "en": "When a player plays a \\stn{} against you"
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "CLIQUERY"
+        }, 
+        "Description": {
+            "en": "All members of the \\textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "TATTLETALE"
+        }, 
+        "Description": {
+            "en": "All members of the \\textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "BOTANICAL ARSON"
+        }, 
+        "Description": {
+            "en": "All members of the \\textbf{Church of the Undying Rose}, except yourself, must reveal themselves."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "CYCLE of REVENGE"
+        }, 
+        "Description": {
+            "en": "All members of the \\textbf{Vengeful Sacrificium}, except yourself, must reveal themselves."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "VICIOUSNESS"
+        }, 
+        "Description": {
+            "en": "All members of \\textbf{Ye Brothers Merry}, except yourself, must reveal themselves."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "ALLEGATIONS"
+        }, 
+        "Description": {
+            "en": "You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \\pnts{}."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "SAVOIR FAIRE"
+        }, 
+        "Description": {
+            "en": "Take 2 \\pnts{} from the player."
+        },
+        "Instant": {
+            "en": "When a player is forcibly revealed to be a member of any group."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "LOADSHEDDING"
+        },
+        "Description": {
+            "en": "While this card is in effect, players do not have to reveal their alliances."
+        },
+        "Persistent": true,
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "UNEXPECTED SURGE"
+        },
+        "Description": {
+            "en": "Remove \\textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "RALLYING CRY"
+        },
+        "Description": {
+            "en": "Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \\pnt{} per revealed player."
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "SOLE SURVIVOR"
+        },
+        "Description": {
+            "en": "Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \\pnt{}."
+        },
+        "Copies": 2
     }
 ]

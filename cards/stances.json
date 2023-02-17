@@ -9,7 +9,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 25
+        "Copies": 35
     },
     {
         "Name": {
@@ -20,7 +20,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 25
+        "Copies": 35
     },
     {
         "Name": {
@@ -32,7 +32,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -43,7 +43,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 4,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -55,7 +55,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -66,7 +66,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 1,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -78,7 +78,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 4,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -89,7 +89,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -101,7 +101,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -113,7 +113,7 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -125,18 +125,18 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
-            "en": "“PEACEKEEPING”"
+            "en": "\\say{PEACEKEEPING}"
         },
         "Description": {
             "en": "\\brg{}: take all the \\act{} cards of the other player."
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -148,7 +148,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -2,
         "AgainstBargain": 4,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -159,7 +159,7 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -171,7 +171,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -181,7 +181,7 @@
             "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \\stn{} cards."
         },
         "Type": "Betrayal",
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -193,7 +193,7 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -205,7 +205,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -3,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 3
     },
     {
         "Name": {
@@ -217,7 +217,7 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 0,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -229,7 +229,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -241,7 +241,7 @@
         "Type": "Betrayal",
         "AgainstBetrayal": -1,
         "AgainstBargain": -1,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -253,7 +253,7 @@
         "Type": "Bargain",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 2
     },
     {
         "Name": {
@@ -265,6 +265,66 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "GATEKEEPING"
+        },
+        "Description": {
+            "en": "\\btr{}: The other player must reveal themselves if they are a member of the \\textbf{Queer Throatslitting Collective}."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 2,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "RATTED OUT"
+        },
+        "Description": {
+            "en": "\\btrbrg{}: if either player is a member of the \\textbf{League of Inordinate Reprobates}, they must reveal themselves. If both are members, \\brg{} loses 3 extra points."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 0,
+        "AgainstBargain": 2,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "CORPSES for ROSES"
+        },
+        "Description": {
+            "en": "\\btr{}: If you are a member of the \\textbf{Church of the Undying Rose}, you may reveal yourself and gain 4 \\pnts{}."
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "BLOOD PRICE"
+        },
+        "Description": {
+            "en": "The other player must reveal all their alliances. If they are in the \\textbf{Vengeful Sacrificium}, you lose 2 \\pnts{}."
+        },
+        "Type": "Betrayal",
+        "AgainstBetrayal": 1,
+        "AgainstBargain": 3,
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "JAUNTY TUNE"
+        },
+        "Description": {
+            "en": "If either player is a member of \\textbf{Ye Brothers Merry}, they may reveal themselves and gain 1 \\pnt{}."
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": -1,
+        "AgainstBargain": 3,
         "Copies": 1
     }
 ]

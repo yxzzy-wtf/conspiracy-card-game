@@ -21,6 +21,7 @@
 \usepackage{anyfontsize}
 \usepackage{ifthen}
 \usepackage{array}
+\usepackage{dirtytalk}
 
 \RequirePackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
@@ -155,6 +156,21 @@
     \end{tikzpicture}
 }
 
+% Sigils
+\newcommand{\sigil}[3]{ % Name, Description, Initials
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.85) [text width = \cardwidth - 2 * \cardmargin, align = center] {\Large #1};
+    
+        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.125) [draw = none, fill = none, thick, text width = \cardwidth - 2 * \carddescriptionmargin, align = center] {
+            \small \say{\textit{#2}}
+        };
+    
+    \end{tikzpicture}
+}
+
 % Actions
 \newcommand{\action}[4]{ % Name, Description, Instant?, Persistent?
     \begin{tikzpicture}
@@ -166,7 +182,7 @@
         \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
             \ifstrempty{#3}{}{
                 % Instant, add the instant icon
-                \small \textbf{Instant} \textit{#3}
+                \small \textbf{Instant}: \textit{#3}
 
             }\ifstrempty{#4}{}{
                 % Persistent, add the instant icon
@@ -259,104 +275,117 @@
 \playercard{7}
 \playercard{8}
 
-% RULES
-
-\begin{tikzpicture}
-
-    \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
-    
-    \node (title) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 0.5 * \cardnameheight) [minimum height = \cardnameheight] {\LARGE CONSPIRACY};
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 1/3};
-    \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{PREGAME}};
-
-    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
-        \footnotesize 
-        For \textit{n} players, deal each player:\\
-        ~~\textit{n} + 2 \stn{} cards\\
-        ~~4 \act{} cards\\
-        ~~4 \fin{} cards \\
-        ~\\
-        Each player should prepare a \stn{} mat, which should be a page with a space for every other player. During the game, \stn{} cards will be placed here to indicate your bargains and betrayals. \\
-        ~\\
-        Remaining \act{} cards should be placed in a deck, face down, in the center of the table. This is the \textbf{draw deck}. \\
-        ~\\
-        The first player is the person whose birthday is closest to July 6th. \\
-    };
-
-\end{tikzpicture}
-
-\begin{tikzpicture}
-
-    \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
-    
-    \node (title) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 0.5 * \cardnameheight) [minimum height = \cardnameheight] {\LARGE CONSPIRACY};
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 2/3};
-    \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{ROUNDS}};
-
-    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
-        \footnotesize 
-        Each player must do the following in their turn: \\
-        1. If the player has played a \stn{} against every other player, their turn is skipped. Otherwise: \\
-        2. Play a \stn{} face-down, unless otherwise specified. \\
-        \footnotesize 3. Optionally play one \act{}, and resolve its effect. \\
-        4. If you are holding fewer than 8 \act{} cards, draw an \act{} from the draw deck. \\
-        5. Your turn is now over, and the player to your left begins! \\
-        ~\\
-        This continues until every player has filled their \stn{} mat. \\
-    };
-
-\end{tikzpicture}
-
-\begin{tikzpicture}
-
-    \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
-    
-    \node (title) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 0.5 * \cardnameheight) [minimum height = \cardnameheight] {\LARGE CONSPIRACY};
-    \node (subtitle) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {RULES 3/3};
-    \node (phase) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 1.4 * \cardnameheight) [minimum height = 0.5 * \cardnameheight] {\small \textit{POST-ROUND}};
-
-    \node (rules) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0.5 * \cardnameheight, align = left] { 
-        \footnotesize 
-        Once all \stn{} mats have been filled, the ??? part of the round is complete. Before revealing each of your \stn{} cards, each player may choose and play a \fin{} card, face-down. \\
-        ~\\
-        At the same time, all players must flip their played \stn{} cards face-up, along with their played \fin{} card. \\
-        ~\\
-        Resolve the effects of \fin{} cards in order of priority, lowest-to-highest. Once they have all been resolved, calculate \pnts{} by resolving all \stn{} interactions in a clockwise direction. Then, go onto the next round!
-        Play 4 rounds if there are fewer than 5 players, otherwise play 3 rounds. \\
-    };
-
-\end{tikzpicture}
-
+% SIGILS
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
 
 % ACTIONS
 \action{NIL}{All players must immediately play a \stn{} card.}{}{}
+\action{NIL}{All players must immediately play a \stn{} card.}{}{}
+\action{CURIOSITY}{All players holding at least one \btr{} must raise their hands. You may swap any held \stn{} of yours for a \btr{} of their choice.}{}{}
 \action{CURIOSITY}{All players holding at least one \btr{} must raise their hands. You may swap any held \stn{} of yours for a \btr{} of their choice.}{}{}
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
+\action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
 \action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
 \action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
+\action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
+\action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
+\action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
 \action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
 \action{THAT WHICH is UNSEEN}{You may look at the \act{} draw deck. You may order it or shuffle it in any way you wish before putting it back.}{}{}
+\action{THAT WHICH is UNSEEN}{You may look at the \act{} draw deck. You may order it or shuffle it in any way you wish before putting it back.}{}{}
 \action{PARANOIA}{All players holding at least one \brg{} must raise their hands. You may swap any held \stn{} of yours with a \brg{} of their choice.}{}{}
+\action{PARANOIA}{All players holding at least one \brg{} must raise their hands. You may swap any held \stn{} of yours with a \brg{} of their choice.}{}{}
+\action{DUPLICITY}{You may swap two of your played \stn{} cards.}{}{}
 \action{DUPLICITY}{You may swap two of your played \stn{} cards.}{}{}
 \action{BURNING TRUTH}{Choose any player who must reveal their held \stn{} cards to everyone, then give that player this \textbf{Burning Truth} card instead of discarding it.}{}{}
 \action{LANDMINE}{Negate that effect. The player must also discard all their \act{} cards.}{If a player tries to take or swap any of your held cards.}{}
+\action{LANDMINE}{Negate that effect. The player must also discard all their \act{} cards.}{If a player tries to take or swap any of your held cards.}{}
+\action{TOXIC SHOCK}{All other players must discard 2 \act{} cards.}{}{}
 \action{TOXIC SHOCK}{All other players must discard 2 \act{} cards.}{}{}
 \action{SUBTERFUGE}{You may look at the played \stn{} cards of any one other player.}{}{}
+\action{SUBTERFUGE}{You may look at the played \stn{} cards of any one other player.}{}{}
+\action{FAMINE}{While this card is in effect, no \act{} cards may be drawn.}{}{true}
 \action{FAMINE}{While this card is in effect, no \act{} cards may be drawn.}{}{true}
 \action{ABUNDANCE}{Remove \textbf{Famine} from play. Draw as many \act{} cards as there are players, then give each player one card of your choosing.}{}{}
+\action{ABUNDANCE}{Remove \textbf{Famine} from play. Draw as many \act{} cards as there are players, then give each player one card of your choosing.}{}{}
+\action{ABUNDANCE}{Remove \textbf{Famine} from play. Draw as many \act{} cards as there are players, then give each player one card of your choosing.}{}{}
+\action{ABUNDANCE}{Remove \textbf{Famine} from play. Draw as many \act{} cards as there are players, then give each player one card of your choosing.}{}{}
+\action{AMNESIA}{Remove all persistent \act{} cards from play.}{}{}
 \action{AMNESIA}{Remove all persistent \act{} cards from play.}{}{}
 \action{HONESTY}{You may turn any of your own played \stn{} cards face-up.}{}{}
-\action{FEAR}{While you hold this card, you may not play any other \act{} cards.}{}{}
+\action{HONESTY}{You may turn any of your own played \stn{} cards face-up.}{}{}
+\action{FEAR}{No effect. While you hold this card, you may not play any other \act{} cards.}{}{}
+\action{FEAR}{No effect. While you hold this card, you may not play any other \act{} cards.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
+\action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
 \action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
 \action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
 \action{LOVE}{If another player has \textbf{Love}, they may reveal it and discard it, and you both gain 2 \pnts{}. Only the first player to reveal will gain \pnts{}. If no player reveals \textbf{Love}, you lose 2 \pnts{}.}{}{}
 \action{TITHES}{All players must give you one of their \act{} cards, of their choosing.}{}{}
+\action{TITHES}{All players must give you one of their \act{} cards, of their choosing.}{}{}
+\action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
 \action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
 \action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
+\action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
+\action{SUCKER PUNCH}{Flip their \stn{} over and reveal it. If it is \brg{}, gain 1 \pnt{}. If it is \btr{}, take 2 \pnts{} from the player.}{When a player plays a \stn{} against you}{}
+\action{SUCKER PUNCH}{Flip their \stn{} over and reveal it. If it is \brg{}, gain 1 \pnt{}. If it is \btr{}, take 2 \pnts{} from the player.}{When a player plays a \stn{} against you}{}
+\action{CLIQUERY}{All members of the \textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves.}{}{}
+\action{CLIQUERY}{All members of the \textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves.}{}{}
+\action{TATTLETALE}{All members of the \textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves.}{}{}
+\action{TATTLETALE}{All members of the \textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves.}{}{}
+\action{BOTANICAL ARSON}{All members of the \textbf{Church of the Undying Rose}, except yourself, must reveal themselves.}{}{}
+\action{BOTANICAL ARSON}{All members of the \textbf{Church of the Undying Rose}, except yourself, must reveal themselves.}{}{}
+\action{CYCLE of REVENGE}{All members of the \textbf{Vengeful Sacrificium}, except yourself, must reveal themselves.}{}{}
+\action{CYCLE of REVENGE}{All members of the \textbf{Vengeful Sacrificium}, except yourself, must reveal themselves.}{}{}
+\action{VICIOUSNESS}{All members of \textbf{Ye Brothers Merry}, except yourself, must reveal themselves.}{}{}
+\action{VICIOUSNESS}{All members of \textbf{Ye Brothers Merry}, except yourself, must reveal themselves.}{}{}
+\action{ALLEGATIONS}{You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \pnts{}.}{}{}
+\action{ALLEGATIONS}{You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \pnts{}.}{}{}
+\action{SAVOIR FAIRE}{Take 2 \pnts{} from the player.}{When a player is forcibly revealed to be a member of any group.}{}
+\action{SAVOIR FAIRE}{Take 2 \pnts{} from the player.}{When a player is forcibly revealed to be a member of any group.}{}
+\action{LOADSHEDDING}{While this card is in effect, players do not have to reveal their alliances.}{}{true}
+\action{LOADSHEDDING}{While this card is in effect, players do not have to reveal their alliances.}{}{true}
+\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each.}{}{}
+\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each.}{}{}
+\action{RALLYING CRY}{Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \pnt{} per revealed player.}{}{}
+\action{RALLYING CRY}{Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \pnt{} per revealed player.}{}{}
+\action{SOLE SURVIVOR}{Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \pnt{}.}{}{}
+\action{SOLE SURVIVOR}{Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \pnt{}.}{}{}
 
 % STANCES
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
@@ -384,6 +413,26 @@
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BARGAIN}{}{BARGAIN}{3}{-1}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
+\stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
@@ -410,27 +459,53 @@
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{BETRAYAL}{}{BETRAYAL}{2}{0}
 \stance{SYMBIOSIS}{\brg{}: both players gain an additional 2 \pnt{}.}{BARGAIN}{3}{-1}
+\stance{SYMBIOSIS}{\brg{}: both players gain an additional 2 \pnt{}.}{BARGAIN}{3}{-1}
+\stance{EXCOMMUNICATION}{This card must be played face-up.}{BETRAYAL}{4}{0}
 \stance{EXCOMMUNICATION}{This card must be played face-up.}{BETRAYAL}{4}{0}
 \stance{QUID PRO QUO}{At any time once played, this card can be flipped face-up to negate a player's \act{}.}{BARGAIN}{3}{-1}
+\stance{QUID PRO QUO}{At any time once played, this card can be flipped face-up to negate a player's \act{}.}{BARGAIN}{3}{-1}
+\stance{ASSASSINATION}{\brg{}: the other player loses 2 additional \pnts{}.}{BETRAYAL}{1}{0}
 \stance{ASSASSINATION}{\brg{}: the other player loses 2 additional \pnts{}.}{BETRAYAL}{1}{0}
 \stance{FAIR DEAL}{This card must be played face-up.}{BARGAIN}{4}{-1}
+\stance{FAIR DEAL}{This card must be played face-up.}{BARGAIN}{4}{-1}
+\stance{COUP d'ETAT}{If played against the player with the most \pnts{} in the last round, they lose 2 additional \pnts{}.}{BETRAYAL}{2}{0}
 \stance{COUP d'ETAT}{If played against the player with the most \pnts{} in the last round, they lose 2 additional \pnts{}.}{BETRAYAL}{2}{0}
 \stance{CONTRACTUAL OBLIGATIONS}{\btr{}: the other player loses 3 \pnts{}.}{BARGAIN}{1}{1}
+\stance{CONTRACTUAL OBLIGATIONS}{\btr{}: the other player loses 3 \pnts{}.}{BARGAIN}{1}{1}
+\stance{A TRUE NAME, SPOKEN SOFTLY}{}{BETRAYAL}{1}{1}
 \stance{A TRUE NAME, SPOKEN SOFTLY}{}{BETRAYAL}{1}{1}
 \stance{PEACEKEEPING}{\btr{}: you may take all \act{} and \fin{} cards of the other player.}{BARGAIN}{3}{-1}
-\stance{“PEACEKEEPING”}{\brg{}: take all the \act{} cards of the other player.}{BETRAYAL}{2}{0}
+\stance{PEACEKEEPING}{\btr{}: you may take all \act{} and \fin{} cards of the other player.}{BARGAIN}{3}{-1}
+\stance{\say{PEACEKEEPING}}{\brg{}: take all the \act{} cards of the other player.}{BETRAYAL}{2}{0}
+\stance{\say{PEACEKEEPING}}{\brg{}: take all the \act{} cards of the other player.}{BETRAYAL}{2}{0}
+\stance{CAMERADERIE}{}{BARGAIN}{4}{-2}
 \stance{CAMERADERIE}{}{BARGAIN}{4}{-2}
 \stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round.}{BETRAYAL}{2}{0}
+\stance{BITTER TASTE}{The other player must also redraw all their \brg{} cards at the beginning of the next round.}{BETRAYAL}{2}{0}
+\stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards.}{BARGAIN}{3}{-1}
 \stance{LOVE-TACKLE}{If a player reveals this card during the game, it is flipped face-up, and they must give you all their \act{} cards.}{BARGAIN}{3}{-1}
 \stance{THROWN to the LAMPREYS}{This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \stn{} cards.}{BETRAYAL}{0}{0}
+\stance{THROWN to the LAMPREYS}{This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \stn{} cards.}{BETRAYAL}{0}{0}
+\stance{QUISLING}{\brg{}: both players gain an additional 2 \pnts{}.}{BETRAYAL}{2}{0}
 \stance{QUISLING}{\brg{}: both players gain an additional 2 \pnts{}.}{BETRAYAL}{2}{0}
 \stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base \pnts{} from \brgbtr{} in this round.}{BARGAIN}{3}{-3}
 \stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base \pnts{} from \brgbtr{} in this round.}{BARGAIN}{3}{-3}
+\stance{TRUE LOVE}{If this card is \brgbrg{} with another \textbf{True Love}, you do not lose any base \pnts{} from \brgbtr{} in this round.}{BARGAIN}{3}{-3}
+\stance{ZERO SUM}{Completely negate the \pnts{} gained or lost by both players in this interaction.}{BETRAYAL}{0}{0}
 \stance{ZERO SUM}{Completely negate the \pnts{} gained or lost by both players in this interaction.}{BETRAYAL}{0}{0}
 \stance{SONNET}{If this is played \brgbtr{}, you may sing a song to avoid losing \pnts{}.}{BARGAIN}{3}{-1}
+\stance{SONNET}{If this is played \brgbtr{}, you may sing a song to avoid losing \pnts{}.}{BARGAIN}{3}{-1}
+\stance{HOSTILE TAKEOVER}{Gain 1 \pnt{} for every \brg{} you have played.}{BETRAYAL}{-1}{-1}
 \stance{HOSTILE TAKEOVER}{Gain 1 \pnt{} for every \brg{} you have played.}{BETRAYAL}{-1}{-1}
 \stance{the SUBLIME}{}{BARGAIN}{2}{0}
+\stance{the SUBLIME}{}{BARGAIN}{2}{0}
 \stance{NIHILISM}{}{BETRAYAL}{1}{1}
+\stance{NIHILISM}{}{BETRAYAL}{1}{1}
+\stance{GATEKEEPING}{\btr{}: The other player must reveal themselves if they are a member of the \textbf{Queer Throatslitting Collective}.}{BETRAYAL}{2}{0}
+\stance{RATTED OUT}{\btrbrg{}: if either player is a member of the \textbf{League of Inordinate Reprobates}, they must reveal themselves. If both are members, \brg{} loses 3 extra points.}{BETRAYAL}{2}{0}
+\stance{CORPSES for ROSES}{\btr{}: If you are a member of the \textbf{Church of the Undying Rose}, you may reveal yourself and gain 4 \pnts{}.}{BARGAIN}{3}{-1}
+\stance{BLOOD PRICE}{The other player must reveal all their alliances. If they are in the \textbf{Vengeful Sacrificium}, you lose 2 \pnts{}.}{BETRAYAL}{3}{1}
+\stance{JAUNTY TUNE}{If either player is a member of \textbf{Ye Brothers Merry}, they may reveal themselves and gain 1 \pnt{}.}{BARGAIN}{3}{-1}
 
 % FINALS
 \final{ENTROPY}{Cancel the effects of all \fin{} cards this round.}{0}

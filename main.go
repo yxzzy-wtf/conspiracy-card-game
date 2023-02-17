@@ -13,6 +13,11 @@ type Card struct {
 	Copies      int
 }
 
+type Sigil struct {
+	Card
+	Initials map[string]string
+}
+
 type Action struct {
 	Card
 	Instant    map[string]string
@@ -39,9 +44,40 @@ type Final struct {
 func main() {
 	lang := os.Args[1]
 
+	si, _ := os.Open("cards/sigils.json")
+	defer si.Close()
+	dec := json.NewDecoder(si)
+	sigils := []Sigil{}
+	if err := dec.Decode(&sigils); err != nil {
+		panic(err)
+	}
+
+	fmt.Print("\n% SIGILS\n")
+
+	for _, sig := range sigils {
+		name, ex := sig.Name[lang]
+		if !ex {
+			panic(fmt.Sprintf("No '%v' language Name for card %v", lang, sig))
+		}
+
+		desc, ex := sig.Description[lang]
+		if !ex {
+			panic(fmt.Sprintf("No '%v' language Description for action card %v", lang, sig))
+		}
+
+		init, ex := sig.Initials[lang]
+		if !ex {
+			panic(fmt.Sprintf("No '%v' language Initials for action card %v", lang, sig))
+		}
+
+		for i := 0; i < sig.Copies; i++ {
+			fmt.Printf("\\sigil{%v}{%v}{%v}\n", name, desc, init)
+		}
+	}
+
 	a, _ := os.Open("cards/actions.json")
 	defer a.Close()
-	dec := json.NewDecoder(a)
+	dec = json.NewDecoder(a)
 	actions := []Action{}
 	if err := dec.Decode(&actions); err != nil {
 		panic(err)
