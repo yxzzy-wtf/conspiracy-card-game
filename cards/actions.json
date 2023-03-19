@@ -41,7 +41,7 @@
             "en": "JOY"
         },
         "Description": {
-            "en": "You may play 3 \\act{} cards immediately. If \\textbf{Misery} has been played this round, you may play 3 \\act{} cards immediately instead."
+            "en": "You may play 2 \\act{} cards immediately. If \\textbf{Misery} has been played this round, you may play 3 \\act{} cards immediately instead."
         },
         "Copies": 2,
         "Persistent": true
@@ -111,7 +111,7 @@
             "en": "TOXIC SHOCK"
         },
         "Description": {
-            "en": "All other players must discard 2 \\act{} cards."
+            "en": "All other players must discard \\act{} cards until they have one fewer than you."
         },
         "Copies": 2
     },
@@ -195,7 +195,7 @@
         "Description": {
             "en": "All players, including yourself, must reveal one of their played \\stn{} cards and then return it to their hand."
         },
-        "Copies": 2
+        "Copies": 4
     },
     {
         "Name": {
@@ -223,48 +223,72 @@
     },
     {
         "Name": {
+            "en": "SIDESWIPE"
+        },
+        "Description": {
+            "en": "You may replay this \\act{} against a different player afterwards."
+        },
+        "Instant": {
+            "en": "When you play an \\act{} that targets another player"
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
+            "en": "SIDESTEP"
+        },
+        "Description": {
+            "en": "Deflect the effect of this \\act{} to the player to your left."
+        },
+        "Instant": {
+            "en": "When an \\act{} targets you"
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
             "en": "CLIQUERY"
         }, 
         "Description": {
-            "en": "All members of the \\textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves."
+            "en": "Gain 1 \\pnt{}. All members of the \\textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
             "en": "TATTLETALE"
         }, 
         "Description": {
-            "en": "All members of the \\textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves."
+            "en": "Gain 1 \\pnt{}. All members of the \\textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
             "en": "BOTANICAL ARSON"
         }, 
         "Description": {
-            "en": "All members of the \\textbf{Church of the Undying Rose}, except yourself, must reveal themselves."
+            "en": "Gain 1 \\pnt{}. All members of the \\textbf{Church of the Undying Rose}, except yourself, must reveal themselves."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
             "en": "CYCLE of REVENGE"
         }, 
         "Description": {
-            "en": "All members of the \\textbf{Vengeful Sacrificium}, except yourself, must reveal themselves."
+            "en": "Gain 1 \\pnt{}. All members of the \\textbf{Vengeful Sacrificium}, except yourself, must reveal themselves."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
             "en": "VICIOUSNESS"
         }, 
         "Description": {
-            "en": "All members of \\textbf{Ye Brothers Merry}, except yourself, must reveal themselves."
+            "en": "Gain 1 \\pnt{}. All members of \\textbf{Ye Brothers Merry}, except yourself, must reveal themselves."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
@@ -277,13 +301,25 @@
     },
     {
         "Name": {
+            "en": "OPPORTUNISM"
+        }, 
+        "Description": {
+            "en": "Take 2 \\pnts{} from that player."
+        },
+        "Instant": {
+            "en": "When a player is forced to reveal a card or their alliance"
+        },
+        "Copies": 2
+    },
+    {
+        "Name": {
             "en": "SAVOIR FAIRE"
         }, 
         "Description": {
-            "en": "Take 2 \\pnts{} from the player."
+            "en": "Take that \\act{} for yourself, and draw another \\act{}."
         },
         "Instant": {
-            "en": "When a player is forcibly revealed to be a member of any group."
+            "en": "When a player draws an \\act{}"
         },
         "Copies": 2
     },
@@ -292,7 +328,7 @@
             "en": "LOADSHEDDING"
         },
         "Description": {
-            "en": "While this card is in effect, players do not have to reveal their alliances."
+            "en": "While this card is in effect, any effect that allows or forces a player to reveal a card is negated."
         },
         "Persistent": true,
         "Copies": 2
@@ -302,7 +338,7 @@
             "en": "UNEXPECTED SURGE"
         },
         "Description": {
-            "en": "Remove \\textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each."
+            "en": "Remove \\textbf{Loadshedding} from play. The players with the most \\act{} cards lose 2 \\pnts{}."
         },
         "Copies": 2
     },
@@ -313,14 +349,26 @@
         "Description": {
             "en": "Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \\pnt{} per revealed player."
         },
-        "Copies": 2
+        "Copies": 1
     },
     {
         "Name": {
             "en": "SOLE SURVIVOR"
         },
         "Description": {
-            "en": "Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \\pnt{}."
+            "en": "Choose a player, who must reveal their alliance. All other members of this alliance must reveal themselves and lose 1 \\pnt{}."
+        },
+        "Copies": 1
+    },
+    {
+        "Name": {
+            "en": "POISON PILL"
+        },
+        "Description": {
+            "en": "You must reveal 4 of your held \\act{} cards."
+        },
+        "Instant": {
+            "en": "If this card gets passed to you by another player, you \\textbf{must} play it"
         },
         "Copies": 2
     }

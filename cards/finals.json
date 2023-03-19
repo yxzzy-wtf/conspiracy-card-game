@@ -211,10 +211,20 @@
     },
     {
         "Name": {
+            "en": "HAND STUFF, UNDER THE TABLE"
+        },
+        "Description": {
+            "en": "For each \\brgbrg{} you have played, gain 1 \\pnt{}, and you may replace any played \\btr{} with a \\btr{} from your hand."
+        },
+        "Copies": 1,
+        "Priority": 21
+    },
+    {
+        "Name": {
             "en": "FINAL RITES"
         },
         "Description": {
-            "en": "Select 3 pairs of \\brgbtr{} and swap them. You may only select 1 interaction involving yourself."
+            "en": "Select up to 2 pairs of \\brgbtr{} and swap them. You may only select 1 interaction per player."
         },
         "Copies": 1,
         "Priority": 100

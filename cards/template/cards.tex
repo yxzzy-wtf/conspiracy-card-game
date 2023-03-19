@@ -275,6 +275,7 @@
 \playercard{7}
 \playercard{8}
 
+
 % SIGILS
 \sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
 \sigil{QUEER THROATSLITTING COLLECTIVE}{Our found family will find yours.}{QTSC}
@@ -288,24 +289,24 @@
 \sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
 \sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
 \sigil{LEAGUE of INORDINATE REPROBATES}{Trouble caused is trouble reified.}{LoIR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
-\sigil{CHURCH of the UNDYING ROSE}{Love heals all wounds. We did cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
+\sigil{CHURCH OF THE UNDYING ROSE}{Love heals all wounds, but we cause some of them.}{CotUR}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
 \sigil{VENGEFUL SACRIFICIUM}{Once burned, twice as petty.}{VS}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
-\sigil{YE BROTHERS JOYOUS}{Happiness or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
+\sigil{YE BROTHERS JOYOUS}{Happiness, or oblivion.}{YBJ}
 
 % ACTIONS
 \action{NIL}{All players must immediately play a \stn{} card.}{}{}
@@ -321,8 +322,8 @@
 \action{CACOPHONY}{All players must immediately reveal their \textbf{Cacophony} cards. If there are 3 or fewer other \textbf{Cacophony} cards revealed, gain that many \pnts{}. Otherwise, discard all your \act{} cards.}{}{}
 \action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
 \action{MISERY}{All other players discard 2 \act{} cards. If \textbf{Joy} is in play, double this effect.}{}{true}
-\action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
-\action{JOY}{You may play 3 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
+\action{JOY}{You may play 2 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
+\action{JOY}{You may play 2 \act{} cards immediately. If \textbf{Misery} has been played this round, you may play 3 \act{} cards immediately instead.}{}{true}
 \action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
 \action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
 \action{IMPLOSION}{Cancel the effects of another player's \act{}.}{At any point while a player is playing an \act{}.}{}
@@ -335,8 +336,8 @@
 \action{BURNING TRUTH}{Choose any player who must reveal their held \stn{} cards to everyone, then give that player this \textbf{Burning Truth} card instead of discarding it.}{}{}
 \action{LANDMINE}{Negate that effect. The player must also discard all their \act{} cards.}{If a player tries to take or swap any of your held cards.}{}
 \action{LANDMINE}{Negate that effect. The player must also discard all their \act{} cards.}{If a player tries to take or swap any of your held cards.}{}
-\action{TOXIC SHOCK}{All other players must discard 2 \act{} cards.}{}{}
-\action{TOXIC SHOCK}{All other players must discard 2 \act{} cards.}{}{}
+\action{TOXIC SHOCK}{All other players must discard \act{} cards until they have one fewer than you.}{}{}
+\action{TOXIC SHOCK}{All other players must discard \act{} cards until they have one fewer than you.}{}{}
 \action{SUBTERFUGE}{You may look at the played \stn{} cards of any one other player.}{}{}
 \action{SUBTERFUGE}{You may look at the played \stn{} cards of any one other player.}{}{}
 \action{FAMINE}{While this card is in effect, no \act{} cards may be drawn.}{}{true}
@@ -360,32 +361,35 @@
 \action{TITHES}{All players must give you one of their \act{} cards, of their choosing.}{}{}
 \action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
 \action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
+\action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
+\action{PURIFICATION}{All players, including yourself, must reveal one of their played \stn{} cards and then return it to their hand.}{}{}
 \action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
 \action{TURNABOUT is FAIR PLAY}{You may pick the card up and play it yourself immediately afterwards.}{If an \act{} allows a player to take cards from your hand}{}
 \action{SUCKER PUNCH}{Flip their \stn{} over and reveal it. If it is \brg{}, gain 1 \pnt{}. If it is \btr{}, take 2 \pnts{} from the player.}{When a player plays a \stn{} against you}{}
 \action{SUCKER PUNCH}{Flip their \stn{} over and reveal it. If it is \brg{}, gain 1 \pnt{}. If it is \btr{}, take 2 \pnts{} from the player.}{When a player plays a \stn{} against you}{}
-\action{CLIQUERY}{All members of the \textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves.}{}{}
-\action{CLIQUERY}{All members of the \textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves.}{}{}
-\action{TATTLETALE}{All members of the \textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves.}{}{}
-\action{TATTLETALE}{All members of the \textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves.}{}{}
-\action{BOTANICAL ARSON}{All members of the \textbf{Church of the Undying Rose}, except yourself, must reveal themselves.}{}{}
-\action{BOTANICAL ARSON}{All members of the \textbf{Church of the Undying Rose}, except yourself, must reveal themselves.}{}{}
-\action{CYCLE of REVENGE}{All members of the \textbf{Vengeful Sacrificium}, except yourself, must reveal themselves.}{}{}
-\action{CYCLE of REVENGE}{All members of the \textbf{Vengeful Sacrificium}, except yourself, must reveal themselves.}{}{}
-\action{VICIOUSNESS}{All members of \textbf{Ye Brothers Merry}, except yourself, must reveal themselves.}{}{}
-\action{VICIOUSNESS}{All members of \textbf{Ye Brothers Merry}, except yourself, must reveal themselves.}{}{}
+\action{SIDESWIPE}{You may replay this \act{} against a different player afterwards.}{When you play an \act{} that targets another player}{}
+\action{SIDESWIPE}{You may replay this \act{} against a different player afterwards.}{When you play an \act{} that targets another player}{}
+\action{SIDESTEP}{Deflect the effect of this \act{} to the player to your left.}{When an \act{} targets you}{}
+\action{SIDESTEP}{Deflect the effect of this \act{} to the player to your left.}{When an \act{} targets you}{}
+\action{CLIQUERY}{Gain 1 \pnt{}. All members of the \textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves.}{}{}
+\action{TATTLETALE}{Gain 1 \pnt{}. All members of the \textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves.}{}{}
+\action{BOTANICAL ARSON}{Gain 1 \pnt{}. All members of the \textbf{Church of the Undying Rose}, except yourself, must reveal themselves.}{}{}
+\action{CYCLE of REVENGE}{Gain 1 \pnt{}. All members of the \textbf{Vengeful Sacrificium}, except yourself, must reveal themselves.}{}{}
+\action{VICIOUSNESS}{Gain 1 \pnt{}. All members of \textbf{Ye Brothers Merry}, except yourself, must reveal themselves.}{}{}
 \action{ALLEGATIONS}{You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \pnts{}.}{}{}
 \action{ALLEGATIONS}{You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \pnts{}.}{}{}
-\action{SAVOIR FAIRE}{Take 2 \pnts{} from the player.}{When a player is forcibly revealed to be a member of any group.}{}
-\action{SAVOIR FAIRE}{Take 2 \pnts{} from the player.}{When a player is forcibly revealed to be a member of any group.}{}
-\action{LOADSHEDDING}{While this card is in effect, players do not have to reveal their alliances.}{}{true}
-\action{LOADSHEDDING}{While this card is in effect, players do not have to reveal their alliances.}{}{true}
-\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each.}{}{}
-\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. Choose 3 players to reveal at least once of their alliances each.}{}{}
+\action{OPPORTUNISM}{Take 2 \pnts{} from that player.}{When a player is forced to reveal a card or their alliance}{}
+\action{OPPORTUNISM}{Take 2 \pnts{} from that player.}{When a player is forced to reveal a card or their alliance}{}
+\action{SAVOIR FAIRE}{Take that \act{} for yourself, and draw another \act{}.}{When a player draws an \act{}}{}
+\action{SAVOIR FAIRE}{Take that \act{} for yourself, and draw another \act{}.}{When a player draws an \act{}}{}
+\action{LOADSHEDDING}{While this card is in effect, any effect that allows or forces a player to reveal a card is negated.}{}{true}
+\action{LOADSHEDDING}{While this card is in effect, any effect that allows or forces a player to reveal a card is negated.}{}{true}
+\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. The players with the most \act{} cards lose 2 \pnts{}.}{}{}
+\action{UNEXPECTED SURGE}{Remove \textbf{Loadshedding} from play. The players with the most \act{} cards lose 2 \pnts{}.}{}{}
 \action{RALLYING CRY}{Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \pnt{} per revealed player.}{}{}
-\action{RALLYING CRY}{Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \pnt{} per revealed player.}{}{}
-\action{SOLE SURVIVOR}{Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \pnt{}.}{}{}
-\action{SOLE SURVIVOR}{Choose a player, who must reveal at least one of their alliances. All other members of this alliance must reveal themselves and lose 1 \pnt{}.}{}{}
+\action{SOLE SURVIVOR}{Choose a player, who must reveal their alliance. All other members of this alliance must reveal themselves and lose 1 \pnt{}.}{}{}
+\action{POISON PILL}{You must reveal 4 of your held \act{} cards.}{If this card gets passed to you by another player, you \textbf{must} play it}{}
+\action{POISON PILL}{You must reveal 4 of your held \act{} cards.}{If this card gets passed to you by another player, you \textbf{must} play it}{}
 
 % STANCES
 \stance{BARGAIN}{}{BARGAIN}{3}{-1}
@@ -529,6 +533,7 @@
 \final{MÓRRÍGAN}{Gain 1 \pnt{} for every \brgbtr{} in this round.}{18}
 \final{SACRIFICE}{Gain 3 \pnts{} and discard all of your \act{} and \fin{} cards.}{19}
 \final{CONTRITION}{Ask a player you have played a \btr{} against if they forgive you. If they do, you gain 3 \pnts{}, and they gain 1 \pnt{}.}{20}
-\final{FINAL RITES}{Select 3 pairs of \brgbtr{} and swap them. You may only select 1 interaction involving yourself.}{100}
+\final{HAND STUFF, UNDER THE TABLE}{For each \brgbrg{} you have played, gain 1 \pnt{}, and you may replace any played \btr{} with a \btr{} from your hand.}{21}
+\final{FINAL RITES}{Select up to 2 pairs of \brgbtr{} and swap them. You may only select 1 interaction per player.}{100}
 
 \end{document}
