@@ -9,7 +9,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 35
+        "Copies": 35,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -20,7 +22,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 35
+        "Copies": 35,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -32,7 +36,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -43,7 +49,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 4,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -55,7 +63,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -66,7 +76,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 1,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -78,7 +90,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 4,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -89,7 +103,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -101,11 +117,13 @@
         "Type": "Bargain",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
-            "en": "A TRUE NAME, SPOKEN SOFTLY"
+            "en": "a TRUE NAME, SPOKEN SOFTLY"
         },
         "Description": {
             "en": ""
@@ -113,7 +131,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -125,7 +145,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -136,7 +158,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -148,7 +172,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -2,
         "AgainstBargain": 4,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -159,7 +185,9 @@
         },
         "Type": "Betrayal",
         "AgainstBargain": 2,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -171,7 +199,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -181,7 +211,9 @@
             "en": "This card must be played face-up and cannot be moved or interacted with. The player this card is played against must immediately play 2 of their \\stn{} cards."
         },
         "Type": "Betrayal",
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -193,7 +225,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -205,7 +239,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -3,
         "AgainstBargain": 3,
-        "Copies": 3
+        "Copies": 3,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -217,19 +253,37 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 0,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
             "en": "SONNET"
         },
         "Description": {
-            "en": "If this is played \\brgbtr{}, you may sing a song to avoid losing \\pnts{}."
+            "en": "\\btr{}: you may sing a song to avoid losing \\pnts{}."
         },
         "Type": "Bargain",
-        "AgainstBetrayal": -1,
+        "AgainstBetrayal": -3,
         "AgainstBargain": 3,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
+    },
+    {
+        "Name": {
+            "en": "TOMFOOLERY"
+        },
+        "Description": {
+            "en": "\\btr{}: you may tell a joke. If anyone laughs or chuckles, you avoid losing \\pnts{}."
+        },
+        "Type": "Bargain",
+        "AgainstBetrayal": -3,
+        "AgainstBargain": 3,
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -241,7 +295,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": -1,
         "AgainstBargain": -1,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -253,7 +309,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -265,7 +323,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 1,
         "AgainstBargain": 1,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -277,7 +337,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -289,7 +351,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 0,
         "AgainstBargain": 2,
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -301,7 +365,9 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -313,7 +379,9 @@
         "Type": "Betrayal",
         "AgainstBetrayal": 1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -325,6 +393,8 @@
         "Type": "Bargain",
         "AgainstBetrayal": -1,
         "AgainstBargain": 3,
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     }
 ]

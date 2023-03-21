@@ -6,7 +6,9 @@
         "Description": {
             "en": "All players must immediately play a \\stn{} card."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -15,7 +17,9 @@
         "Description": {
             "en": "All players holding at least one \\btr{} must raise their hands. You may swap any held \\stn{} of yours for a \\btr{} of their choice."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -24,7 +28,9 @@
         "Description": {
             "en": "All players must immediately reveal their \\textbf{Cacophony} cards. If there are 3 or fewer other \\textbf{Cacophony} cards revealed, gain that many \\pnts{}. Otherwise, discard all your \\act{} cards."
         },
-        "Copies": 7
+        "Copies": 7,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -34,7 +40,9 @@
             "en": "All other players discard 2 \\act{} cards. If \\textbf{Joy} is in play, double this effect."
         },
         "Copies": 2,
-        "Persistent": true
+        "Persistent": true,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -44,28 +52,34 @@
             "en": "You may play 2 \\act{} cards immediately. If \\textbf{Misery} has been played this round, you may play 3 \\act{} cards immediately instead."
         },
         "Copies": 2,
-        "Persistent": true
+        "Persistent": true,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
             "en": "IMPLOSION"
         },
         "Description": {
-            "en": "Cancel the effects of another player's \\act{}."
+            "en": "Cancel the effects of that \\act{}."
         },
         "Copies": 3,
         "Instant": {
             "en": "At any point while a player is playing an \\act{}."
-        }
+        },
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
             "en": "THAT WHICH is UNSEEN"
         },
         "Description": {
-            "en": "You may look at the \\act{} draw deck. You may order it or shuffle it in any way you wish before putting it back."
+            "en": "For the next 30 seconds, you may look at the \\act{} draw deck, and order it or shuffle it in any way you wish before putting it back."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -74,7 +88,9 @@
         "Description": {
             "en": "All players holding at least one \\brg{} must raise their hands. You may swap any held \\stn{} of yours with a \\brg{} of their choice."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -83,7 +99,9 @@
         "Description": {
             "en": "You may swap two of your played \\stn{} cards."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -92,7 +110,9 @@
         "Description": {
             "en": "Choose any player who must reveal their held \\stn{} cards to everyone, then give that player this \\textbf{Burning Truth} card instead of discarding it."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -104,7 +124,9 @@
         "Instant": {
             "en": "If a player tries to take or swap any of your held cards."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -113,7 +135,9 @@
         "Description": {
             "en": "All other players must discard \\act{} cards until they have one fewer than you."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -122,7 +146,9 @@
         "Description": {
             "en": "You may look at the played \\stn{} cards of any one other player."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -132,7 +158,9 @@
             "en": "While this card is in effect, no \\act{} cards may be drawn."
         },
         "Persistent": true,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -141,7 +169,9 @@
         "Description": {
             "en": "Remove \\textbf{Famine} from play. Draw as many \\act{} cards as there are players, then give each player one card of your choosing."
         },
-        "Copies": 4
+        "Copies": 4,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -150,7 +180,9 @@
         "Description": {
             "en": "Remove all persistent \\act{} cards from play."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -159,7 +191,9 @@
         "Description": {
             "en": "You may turn any of your own played \\stn{} cards face-up."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -168,7 +202,9 @@
         "Description": {
             "en": "No effect. While you hold this card, you may not play any other \\act{} cards."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -177,7 +213,9 @@
         "Description": {
             "en": "If another player has \\textbf{Love}, they may reveal it and discard it, and you both gain 2 \\pnts{}. Only the first player to reveal will gain \\pnts{}. If no player reveals \\textbf{Love}, you lose 2 \\pnts{}."
         },
-        "Copies": 5
+        "Copies": 5,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -186,7 +224,9 @@
         "Description": {
             "en": "All players must give you one of their \\act{} cards, of their choosing."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -195,7 +235,9 @@
         "Description": {
             "en": "All players, including yourself, must reveal one of their played \\stn{} cards and then return it to their hand."
         },
-        "Copies": 4
+        "Copies": 4,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -207,7 +249,9 @@
         "Instant": {
             "en": "If an \\act{} allows a player to take cards from your hand"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -219,7 +263,9 @@
         "Instant": {
             "en": "When a player plays a \\stn{} against you"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -231,7 +277,9 @@
         "Instant": {
             "en": "When you play an \\act{} that targets another player"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -243,7 +291,9 @@
         "Instant": {
             "en": "When an \\act{} targets you"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -252,7 +302,9 @@
         "Description": {
             "en": "Gain 1 \\pnt{}. All members of the \\textbf{Queer Throatslitting Collective}, except yourself, must reveal themselves."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -261,7 +313,9 @@
         "Description": {
             "en": "Gain 1 \\pnt{}. All members of the \\textbf{League of Inordinate Reprobates}, except yourself, must reveal themselves."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -270,7 +324,9 @@
         "Description": {
             "en": "Gain 1 \\pnt{}. All members of the \\textbf{Church of the Undying Rose}, except yourself, must reveal themselves."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -279,7 +335,9 @@
         "Description": {
             "en": "Gain 1 \\pnt{}. All members of the \\textbf{Vengeful Sacrificium}, except yourself, must reveal themselves."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -288,7 +346,9 @@
         "Description": {
             "en": "Gain 1 \\pnt{}. All members of \\textbf{Ye Brothers Merry}, except yourself, must reveal themselves."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -297,7 +357,9 @@
         "Description": {
             "en": "You may accuse another player of being a member of any group. If you are correct, they must reveal themselves and give you 2 \\pnts{}."
         },
-        "Copies": 2
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -309,7 +371,9 @@
         "Instant": {
             "en": "When a player is forced to reveal a card or their alliance"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -321,7 +385,9 @@
         "Instant": {
             "en": "When a player draws an \\act{}"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -331,7 +397,9 @@
             "en": "While this card is in effect, any effect that allows or forces a player to reveal a card is negated."
         },
         "Persistent": true,
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -340,7 +408,9 @@
         "Description": {
             "en": "Remove \\textbf{Loadshedding} from play. The players with the most \\act{} cards lose 2 \\pnts{}."
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -349,7 +419,9 @@
         "Description": {
             "en": "Reveal one of your alliances. Other players in this alliance may also reveal themselves. Each of you receives 1 \\pnt{} per revealed player."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -358,7 +430,9 @@
         "Description": {
             "en": "Choose a player, who must reveal their alliance. All other members of this alliance must reveal themselves and lose 1 \\pnt{}."
         },
-        "Copies": 1
+        "Copies": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -370,6 +444,22 @@
         "Instant": {
             "en": "If this card gets passed to you by another player, you \\textbf{must} play it"
         },
-        "Copies": 2
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
+    },
+    {
+        "Name": {
+            "en": "PETTY CRUELTY"
+        },
+        "Description": {
+            "en": "Look at their \\act{} cards and take any two."
+        },
+        "Instant": {
+            "en": "If another player says the word 'love'"
+        },
+        "Copies": 2,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     }
 ]

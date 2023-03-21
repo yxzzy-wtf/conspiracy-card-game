@@ -9,7 +9,9 @@
         "Initials": {
             "en": "QTSC"
         },
-        "Copies": 6
+        "Copies": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -21,19 +23,23 @@
         "Initials": {
             "en": "LoIR"
         },
-        "Copies": 6
+        "Copies": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
-            "en": "CHURCH OF THE UNDYING ROSE"
+            "en": "CHURCH of the UNDYING ROSE"
         },
         "Description": {
-            "en": "Love heals all wounds, but we cause some of them."
+            "en": "Love heals all wounds. We caused some of them."
         },
         "Initials": {
             "en": "CotUR"
         },
-        "Copies": 6
+        "Copies": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -45,18 +51,22 @@
         "Initials": {
             "en": "VS"
         },
-        "Copies": 6
+        "Copies": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
             "en": "YE BROTHERS JOYOUS"
         },
         "Description": {
-            "en": "Happiness, or oblivion."
+            "en": "Happiness or oblivion."
         },
         "Initials": {
             "en": "YBJ"
         },
-        "Copies": 6
+        "Copies": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     }
 ]

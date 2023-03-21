@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"os"
 	"strings"
@@ -11,6 +12,8 @@ type Card struct {
 	Name        map[string]string
 	Description map[string]string
 	Copies      int
+	Introduced  string
+	Updated     string
 }
 
 type Sigil struct {
@@ -42,7 +45,10 @@ type Final struct {
 }
 
 func main() {
-	lang := os.Args[1]
+	var lang = flag.String("lang", "en", "Language strings to use in the output")
+	var version = flag.String("printvers", "", "Specific version to print out")
+
+	flag.Parse()
 
 	si, _ := os.Open("cards/sigils.json")
 	defer si.Close()
@@ -55,17 +61,21 @@ func main() {
 	fmt.Print("\n% SIGILS\n")
 
 	for _, sig := range sigils {
-		name, ex := sig.Name[lang]
+		if *version != "" && sig.Updated != *version {
+			continue
+		}
+
+		name, ex := sig.Name[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Name for card %v", lang, sig))
 		}
 
-		desc, ex := sig.Description[lang]
+		desc, ex := sig.Description[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Description for action card %v", lang, sig))
 		}
 
-		init, ex := sig.Initials[lang]
+		init, ex := sig.Initials[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Initials for action card %v", lang, sig))
 		}
@@ -86,19 +96,23 @@ func main() {
 	fmt.Print("\n% ACTIONS\n")
 
 	for _, act := range actions {
-		name, ex := act.Name[lang]
+		if *version != "" && act.Updated != *version {
+			continue
+		}
+
+		name, ex := act.Name[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Name for card %v", lang, act))
 		}
 
-		desc, ex := act.Description[lang]
+		desc, ex := act.Description[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Description for action card %v", lang, act))
 		}
 
 		var inst string
 		if act.Instant != nil {
-			inst, ex = act.Instant[lang]
+			inst, ex = act.Instant[*lang]
 			if !ex {
 				panic(fmt.Sprintf("No '%v' language Instant for action card %v", lang, act))
 			}
@@ -110,7 +124,8 @@ func main() {
 		}
 
 		for i := 0; i < act.Copies; i++ {
-			fmt.Printf("\\action{%v}{%v}{%v}{%v}\n", name, desc, inst, pers)
+			fmt.Printf("\\action{%v}{%v}{%v}{%v}{%v}{%v}\n", name, desc, inst, pers,
+				act.Introduced, act.Updated)
 		}
 	}
 
@@ -124,12 +139,16 @@ func main() {
 
 	fmt.Print("\n% STANCES\n")
 	for _, stn := range stances {
-		name, ex := stn.Name[lang]
+		if *version != "" && stn.Updated != *version {
+			continue
+		}
+
+		name, ex := stn.Name[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Name for stance card %v", lang, stn))
 		}
 
-		desc, ex := stn.Description[lang]
+		desc, ex := stn.Description[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Description for stance card %v", lang, stn))
 		}
@@ -137,7 +156,8 @@ func main() {
 		stancetype := strings.ToUpper(stn.Type)
 
 		for i := 0; i < stn.Copies; i++ {
-			fmt.Printf("\\stance{%v}{%v}{%v}{%v}{%v}\n", name, desc, stancetype, stn.AgainstBargain, stn.AgainstBetrayal)
+			fmt.Printf("\\stance{%v}{%v}{%v}{%v}{%v}{%v}{%v}\n", name, desc, stancetype,
+				stn.AgainstBargain, stn.AgainstBetrayal, stn.Introduced, stn.Updated)
 		}
 	}
 
@@ -151,18 +171,23 @@ func main() {
 
 	fmt.Print("\n% FINALS\n")
 	for _, fin := range finals {
-		name, ex := fin.Name[lang]
+		if *version != "" && fin.Updated != *version {
+			continue
+		}
+
+		name, ex := fin.Name[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Name for final card %v", lang, fin))
 		}
 
-		desc, ex := fin.Description[lang]
+		desc, ex := fin.Description[*lang]
 		if !ex {
 			panic(fmt.Sprintf("No '%v' language Description for final card %v", lang, fin))
 		}
 
 		for i := 0; i < fin.Copies; i++ {
-			fmt.Printf("\\final{%v}{%v}{%v}\n", name, desc, fin.Priority)
+			fmt.Printf("\\final{%v}{%v}{%v}{%v}{%v}\n", name, desc, fin.Priority,
+				fin.Introduced, fin.Updated)
 		}
 	}
 

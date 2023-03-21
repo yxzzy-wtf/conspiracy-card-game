@@ -7,7 +7,9 @@
             "en": "Cancel the effects of all \\fin{} cards this round."
         },
         "Copies": 1,
-        "Priority": 0
+        "Priority": 0,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -17,7 +19,9 @@
             "en": "Swap two played \\stn{} cards between any two players other than yourself."
         },
         "Copies": 1,
-        "Priority": 1
+        "Priority": 1,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -27,7 +31,9 @@
             "en": "Your \\stn{} cards cannot be changed by any future \\fin{} effects this round."
         },
         "Copies": 1,
-        "Priority": 2
+        "Priority": 2,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -37,7 +43,9 @@
             "en": "If you have played a \\brgbtr{}, you may take all their held \\act{} and \\fin{} cards."
         },
         "Copies": 1,
-        "Priority": 3
+        "Priority": 3,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -47,7 +55,9 @@
             "en": "If you have played a \\btrbrg{}, you may change your stance to a \\brg{}, if you are holding one. If you do so, the other player gains 2 extra \\pnts{}."
         },
         "Copies": 1,
-        "Priority": 4
+        "Priority": 4,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -57,7 +67,9 @@
             "en": "Gain 3 \\pnts{} for every time you have played a \\btrbtr{} in this round."
         },
         "Copies": 1,
-        "Priority": 5
+        "Priority": 5,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -67,7 +79,9 @@
             "en": "Gain 3 \\pnts{} for each of your \\brgbtr{} in this round."
         },
         "Copies": 1,
-        "Priority": 6
+        "Priority": 6,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -77,7 +91,9 @@
             "en": "Replace one of your played \\stn{} cards with one of the opposite \\stn{}, if you hold one."
         },
         "Copies": 1,
-        "Priority": 7
+        "Priority": 7,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -87,7 +103,9 @@
             "en": "Choose another player. Both of you lose 5 \\pnts{}. If you are already the player with the lowest score before losing these \\pnts{}, only the other player loses 5 \\pnts{}."
         },
         "Copies": 1,
-        "Priority": 8
+        "Priority": 8,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -97,7 +115,9 @@
             "en": "If more than half the \\fin{} cards have already been resolved, gain 3 \\pnts{}. Otherwise, lose 1 \\pnt{}."
         },
         "Copies": 1,
-        "Priority": 9
+        "Priority": 9,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -107,7 +127,9 @@
             "en": "The player of the next \\fin{} to resolve loses 4 \\pnts{}."
         },
         "Copies": 1,
-        "Priority": 10
+        "Priority": 10,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -117,7 +139,9 @@
             "en": "Lose 3 \\pnts{}. You may not lose any further \\pnts{} this round, for any reason."
         },
         "Copies": 1,
-        "Priority": 11
+        "Priority": 11,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -127,7 +151,9 @@
             "en": "Pick up 4 played \\stn{} cards, shuffle them, and randomly deal them back to where they were taken from before revealing them."
         },
         "Copies": 1,
-        "Priority": 12
+        "Priority": 12,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -137,7 +163,9 @@
             "en": "Take 3 \\pnts{} from one player, and give 3 \\pnts{} to a player other than yourself."
         },
         "Copies": 1,
-        "Priority": 13
+        "Priority": 13,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -147,7 +175,9 @@
             "en": "Choose another player. All other players vote for you, or for the other player. If you win a majority of votes, take 3 \\pnts{} from the other player. If you do not, give 3 \\pnts{} to them."
         },
         "Copies": 1,
-        "Priority": 14
+        "Priority": 14,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -157,7 +187,9 @@
             "en": "If this is the last \\fin{} to resolve, gain 5 \\pnts{}."
         },
         "Copies": 1,
-        "Priority": 15
+        "Priority": 15,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -167,7 +199,9 @@
             "en": "Every player gains 1 \\pnt{} for every \\brg{} they have played. You gain an extra \\pnt{} for each \\brg{} you have played."
         },
         "Copies": 1,
-        "Priority": 16
+        "Priority": 16,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -177,7 +211,9 @@
             "en": "You may ignore any \\pnts{} lost due to any one \\btr{}."
         },
         "Copies": 1,
-        "Priority": 17
+        "Priority": 17,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -187,7 +223,9 @@
             "en": "Gain 1 \\pnt{} for every \\brgbtr{} in this round."
         },
         "Copies": 1,
-        "Priority": 18
+        "Priority": 18,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -197,7 +235,9 @@
             "en": "Gain 3 \\pnts{} and discard all of your \\act{} and \\fin{} cards."
         },
         "Copies": 1,
-        "Priority": 19
+        "Priority": 19,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
@@ -207,17 +247,21 @@
             "en": "Ask a player you have played a \\btr{} against if they forgive you. If they do, you gain 3 \\pnts{}, and they gain 1 \\pnt{}."
         },
         "Copies": 1,
-        "Priority": 20
+        "Priority": 20,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.0"
     },
     {
         "Name": {
-            "en": "HAND STUFF, UNDER THE TABLE"
+            "en": "HAND STUFF, UNDER the TABLE"
         },
         "Description": {
             "en": "For each \\brgbrg{} you have played, gain 1 \\pnt{}, and you may replace any played \\btr{} with a \\btr{} from your hand."
         },
         "Copies": 1,
-        "Priority": 21
+        "Priority": 21,
+        "Introduced": "0.1.1",
+        "Updated": "0.1.1"
     },
     {
         "Name": {
@@ -227,6 +271,8 @@
             "en": "Select up to 2 pairs of \\brgbtr{} and swap them. You may only select 1 interaction per player."
         },
         "Copies": 1,
-        "Priority": 100
+        "Priority": 100,
+        "Introduced": "0.1.0",
+        "Updated": "0.1.1"
     }
 ]
