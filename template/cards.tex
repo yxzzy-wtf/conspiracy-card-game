@@ -1,0 +1,280 @@
+\documentclass{scrartcl}
+
+% Compiled with assistance from a wonderful guide by Brett Witty: https://www.brettwitty.net/how-to-design-cards-1.html; https://www.brettwitty.net/how-to-design-cards-2.html; https://www.brettwitty.net/how-to-design-cards-3.html
+
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{alchemy}
+\usetikzlibrary{positioning}
+
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multicol}
+\usepackage[margin=8mm]{geometry}
+
+\usepackage{nopageno}
+\usepackage{graphicx, txfonts}
+\usepackage{anyfontsize}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{dirtytalk}
+
+\RequirePackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength{\PreviewBorder}{0.125in}
+
+\hyphenpenalty=100000
+
+% All cards
+\newcommand{\cardmargin}{2mm}
+\newcommand{\cardcorners}{4mm}
+\newcommand{\cardwidth}{63mm}
+\newcommand{\cardheight}{88mm}
+\newcommand{\cardnameheight}{10mm}
+\newcommand{\carddescriptionheight}{30mm}
+\newcommand{\carddescriptionmargin}{4mm}
+
+% TODO apply internationalization rules here too
+\newcommand{\card}[1]{\textbf{#1}}
+\newcommand{\act}{\textbf{Action}}
+\newcommand{\stn}{\textbf{Stance}}
+\newcommand{\fin}{\textbf{Final}}
+\newcommand{\mis}{\textbf{Mission}}
+%\newcommand{\brg}{\textcolor{white}\bargainheart{\textcolor{black}\bargainheartoutline}}
+\newcommand{\brg}{{\ooalign{\textcolor{white}\bargainheart\cr\hss\textcolor{black}\bargainheartoutline\kern .025em\hss}}}
+\newcommand{\btr}{\betrayalheart}
+\newcommand{\pnt}{\textbf{Soul}}
+\newcommand{\pnts}{\textbf{Souls}}
+
+
+\newcommand{\brgbrg}{\brg\!\!\brg}
+\newcommand{\btrbtr}{\btr\!\!\btr}
+\newcommand{\btrbrg}{\btr\!\!\brg}
+\newcommand{\brgbtr}{\brg\!\!\btr}
+
+% Stance Maps
+
+% PLAYER CARDS
+\newcommand{\player}[1]{
+    \ifthenelse{\equal{#1}{\string 1}}{\lead{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 2}}{\fermentation{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 3}}{\phosphorus{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 4}}{\incineration{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 5}}{\dissolution{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 6}}{\digestion{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 7}}{\silver{scale=8, line width=6pt}}{}
+    \ifthenelse{\equal{#1}{\string 8}}{\transmutation{scale=8, line width=6pt}}{}
+}
+
+\newcommand{\playersml}[1]{
+    \ifthenelse{\equal{#1}{\string 1}}{\lead{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 2}}{\fermentation{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 3}}{\phosphorus{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 4}}{\incineration{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 5}}{\dissolution{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 6}}{\digestion{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 7}}{\silver{scale=6, line width=4pt}}{}
+    \ifthenelse{\equal{#1}{\string 8}}{\transmutation{scale=6, line width=4pt}}{}
+}
+
+\newcommand{\matmargins}{30mm}
+\newcommand{\matwidth}{267mm}
+\newcommand{\matheight}{180mm}
+\newcommand{\matpadding}{3mm}
+
+\newcommand{\matbaseangle}{261}
+\newcommand{\matrotationper}{33}
+
+\newcommand{\matcardexperimental}[2]{
+    \draw[rounded corners = \cardcorners, #1, rotate around={\matbaseangle + #2 * \matrotationper:(0.5 * \matwidth, 0.8 * \cardwidth + \cardmargin)}] (0.5 * \matwidth - 0.5 * \cardwidth, 1.4 * \cardwidth + \cardmargin) rectangle ++(\cardwidth - \cardmargin, \cardheight - \cardmargin);
+}
+
+\newcommand{\stancematexperimental}[1]{ % Name, Description, Instant?, Persistent?
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\matwidth, \matheight);
+
+        \newcounter{Rotations}
+
+        \matcard{red}{0}
+        \matcard{red}{1}
+        \matcard{red}{2}
+        \matcard{red}{3}
+        \matcard{red}{4}
+        \matcard{red}{5}
+        \matcard{red}{6}
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large};
+    
+    \end{tikzpicture}
+}
+
+\newcommand{\matinner}{1mm}
+
+\newcommand{\matcard}[4]{
+
+    \ifthenelse{\equal{#3}{#4}}
+        {
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.9) [align = center] {YOU (NOTES \& SOULS)};
+        }
+        {
+            \draw[rounded corners = \cardcorners, draw] (\matpadding + \cardwidth * #1 + \matinner * #1, \matpadding + \cardheight * #2) rectangle ++(\cardwidth - \cardmargin, \cardheight - \cardmargin);
+            \node (pname) at (\cardwidth * #1 + \matinner * #1 + \cardmargin + \cardwidth * 0.5, \matpadding + \cardheight * #2 + \cardheight * 0.5) [align = center] {\player{#3}};
+        }
+}
+
+
+\newcommand{\playercard}[1]{ % Name, Description, Instant?, Persistent?
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.25) [text width = \cardwidth - 3 * \cardmargin, minimum height = 0, align = center] {\Large \playersml{#1}};
+    
+    \end{tikzpicture}
+}
+
+\newcommand{\stancemat}[1]{ % Player #
+    \begin{tikzpicture}
+
+        \draw[white] (0,0) rectangle (\matwidth, \matheight);
+
+        \matcard{0}{0}{1}{#1}
+        \matcard{1}{0}{2}{#1}
+        \matcard{2}{0}{3}{#1}
+        \matcard{3}{0}{4}{#1}
+
+        \matcard{0}{1}{5}{#1}
+        \matcard{1}{1}{6}{#1}
+        \matcard{2}{1}{7}{#1}
+        \matcard{3}{1}{8}{#1}
+    
+    \end{tikzpicture}
+}
+
+% Sigils
+\newcommand{\sigil}[3]{ % Name, Description, Initials
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.85) [text width = \cardwidth - 2 * \cardmargin, align = center] {\Large #1};
+    
+        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight * 0.125) [draw = none, fill = none, thick, text width = \cardwidth - 2 * \carddescriptionmargin, align = center] {
+            \small \say{\textit{#2}}
+        };
+    
+    \end{tikzpicture}
+}
+
+% Actions
+\newcommand{\action}[6]{ % Name, Description, Instant?, Persistent?, Intro V, Updated V
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+    
+        \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
+            \ifstrempty{#3}{}{
+                % Instant, add the instant icon
+                \small \textbf{Instant}: \textit{#3}
+
+            }\ifstrempty{#4}{}{
+                % Persistent, add the instant icon
+                \small \textbf{Persistent}.
+
+            }
+            \small #2
+        };
+    
+    \end{tikzpicture}
+}
+
+% Stances
+\newcommand{\bargainheart}{\ensuremath\varheartsuit}
+\newcommand{\bargainheartoutline}{\ensuremath\heartsuit}
+\newcommand{\betrayalheart}{\rotatebox[origin=c]{180}{\ensuremath\varheartsuit}}
+
+\newcommand{\heart}[1]{
+    \ifthenelse{\equal{#1}{BARGAIN}}
+        {\bargainheartoutline}
+        {\betrayalheart}
+}
+
+\newcommand{\stance}[5]{ % Name, Description, Type, AgainstBargain, AgainstBetrayal
+    \begin{tikzpicture}
+
+        \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+    
+        \node (type) at (0.12 * \cardwidth + \cardmargin, 0.88 * \cardheight) [align = left] {\fontsize{50px}{50px} \heart{#3}};
+
+        \node (basevsbargain) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{\fontsize{50px}{60px} \bargainheart{}}};
+        \node (basevsbargainoutline) at (0.75 * \cardwidth, 0.88 * \cardheight + 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \bargainheartoutline{}};
+        \node (basevsbetrayal) at (0.86 * \cardwidth, 0.88 * \cardheight - 1.1mm) [rounded corners = \cardcorners, align = center] {\fontsize{50px}{60px} \betrayalheart{}};
+
+        \node (basevsbargaintext) at (0.75 * \cardwidth + 0.5mm, 0.88 * \cardheight + 1.5mm) [rounded corners = \cardcorners, align = center] {#4};
+        \node (basevsbetrayaltext) at (0.86 * \cardwidth + 0.5mm, 0.875 * \cardheight - 1mm) [rounded corners = \cardcorners, align = center] {\textcolor{white}{#5}};
+
+        \ifstrempty{#2}
+            {
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+            }
+            {
+                \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+                \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {\small #2};
+            }
+        
+    \end{tikzpicture}
+}
+
+%TODO Finals
+\newcommand{\final}[3]{ % Name, Description, Priority
+\begin{tikzpicture}
+
+    \draw[rounded corners = \cardcorners] (0,0) rectangle (\cardwidth - \cardmargin, \cardheight - \cardmargin);
+
+    \node (name) at (0.5 * \cardwidth - 0.5 * \cardmargin, \carddescriptionheight + \cardnameheight) [text width = \cardwidth - 3 * \cardmargin, minimum height = \cardnameheight, align = center] {\Large #1};
+    
+    \node (priority) at (0.5 * \cardwidth - 0.5 * \cardmargin, \cardheight - \cardmargin - 0.5 * \cardnameheight) [minimum height = \cardnameheight, align = right] {\LARGE #3};
+
+    \node (description) at (0.5 * \cardwidth - 0.5 * \cardmargin, 0.5 * \carddescriptionheight + \carddescriptionmargin) [draw = lightgray, fill = white, thick, text width = \cardwidth - 3 * \carddescriptionmargin, minimum height = \carddescriptionheight, align = center] {
+        \small #2
+    };
+
+\end{tikzpicture}
+}
+
+%TODO Missions
+
+%TODO images
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\stancemat{1}
+\stancemat{2}
+\stancemat{3}
+\stancemat{4}
+\stancemat{5}
+\stancemat{6}
+\stancemat{7}
+\stancemat{8}
+
+\playercard{1}
+\playercard{2}
+\playercard{3}
+\playercard{4}
+\playercard{5}
+\playercard{6}
+\playercard{7}
+\playercard{8}
+
+
+
+\end{document}

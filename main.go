@@ -47,6 +47,7 @@ type Final struct {
 func main() {
 	var lang = flag.String("lang", "en", "Language strings to use in the output")
 	var version = flag.String("printvers", "", "Specific version to print out")
+	flag.Bool("snap", false, "")
 
 	flag.Parse()
 
@@ -199,4 +200,5 @@ func main() {
 	if err := dec.Decode(&missions); err != nil {
 		panic(err)
 	}
+
 }
